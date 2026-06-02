@@ -1,18 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | Business Solutions</title>
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Business Solutions</title>
+  <link rel="stylesheet" href="../css/service.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
-    <section class="page-section">
-        <h1>Services</h1>
-        <p>
-            Explore IT services, digital marketing, mobile marketing, product sales,
-            SEO, brand marketing, and business development support.
-        </p>
+<body class="page-services">
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="brand" href="../index.html"><img src="../images/logo.webp" alt="Business Solutions logo"></a>
+      <input class="nav-check" id="nav-check" type="checkbox">
+      <label class="nav-toggle" for="nav-check" aria-label="Open navigation"><i class="fas fa-bars"></i></label>
+      <div class="nav-panel">
+        <a href="Home.html">Home</a><a href="Dashboard.html">Dashboard</a><a href="about.html">About</a><a class="active" href="services.html">Services</a><a href="solutions.html">Solutions</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a>
+        <div class="nav-actions"><a class="btn btn-ghost" href="Login.html">Login</a><a class="btn btn-primary" href="Register.html">Register</a></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="video-hero compact">
+      <video autoplay muted loop playsinline poster="../images/services.jpg"><source src="../images/businees.mp4" type="video/mp4"></video>
+      <div class="hero-content">
+        <p class="eyebrow">Services</p>
+        <h1>Digital services built for business growth.</h1>
+        <p>From websites and marketing to CRM and analytics, we help you build stronger systems.</p>
+      </div>
     </section>
+
+    <section class="section">
+      <div class="feature-grid services-grid">
+        <article class="feature-card"><i class="fas fa-laptop-code"></i><h3>IT Services</h3><p>Custom websites, software, cloud solutions, maintenance, and tech support.</p></article>
+        <article class="feature-card"><i class="fas fa-bullhorn"></i><h3>Digital Marketing</h3><p>SEO, social campaigns, paid ads, content, and lead generation.</p></article>
+        <article class="feature-card"><i class="fas fa-users-gear"></i><h3>CRM Solutions</h3><p>Lead tracking, follow-up automation, customer data, and sales workflows.</p></article>
+        <article class="feature-card"><i class="fas fa-chart-pie"></i><h3>Data Analytics</h3><p>Dashboards, reports, performance insights, and smarter decision systems.</p></article>
+        <article class="feature-card"><i class="fas fa-headset"></i><h3>Customer Support</h3><p>Helpdesk processes, ticket tracking, live chat, and service reporting.</p></article>
+        <article class="feature-card"><i class="fas fa-handshake-angle"></i><h3>Consulting</h3><p>Planning, process improvement, market strategy, and growth guidance.</p></article>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

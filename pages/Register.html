@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Business Solutions</title>
+  <link rel="stylesheet" href="../css/Register.css">
+</head>
+<body>
+  <main class="auth-page">
+    <section class="auth-panel">
+      <div class="auth-visual">
+        <a class="auth-brand" href="../index.html">
+          <img src="../images/logo.webp" alt="Business Solutions logo">
+        </a>
+        <div>
+          <p class="visual-label">Business Solutions</p>
+          <h2>Build your workspace for smarter growth.</h2>
+          <p>Create an account to organize services, projects, and customer support.</p>
+        </div>
+      </div>
+
+      <div class="auth-card">
+        <div class="auth-copy">
+          <p class="auth-label">Start growing</p>
+          <h1>Create your account</h1>
+          <p>Register to manage services, projects, and business solutions.</p>
+        </div>
+
+        <form class="auth-form register-form" novalidate>
+          <label for="register-name">Full name</label>
+          <input id="register-name" type="text" placeholder="Your name" required>
+
+          <label for="register-email">Email address</label>
+          <input id="register-email" type="email" placeholder="you@example.com" required>
+
+          <label for="register-password">Password</label>
+          <input id="register-password" type="password" placeholder="Minimum 6 characters" required>
+
+          <label for="confirm-password">Confirm password</label>
+          <input id="confirm-password" type="password" placeholder="Re-enter password" required>
+
+          <p class="form-message" aria-live="polite"></p>
+          <button class="auth-submit" type="submit">Register</button>
+        </form>
+
+        <p class="auth-switch">
+          Already have an account?
+          <a href="Login.html">Login</a>
+        </p>
+
+        <a class="back-home" href="../index.html">Back to Home</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const registerForm = document.querySelector(".register-form");
+    const formMessage = document.querySelector(".form-message");
+    const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+
+    registerForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = document.querySelector("#register-name").value.trim();
+      const email = document.querySelector("#register-email").value.trim();
+      const password = document.querySelector("#register-password").value.trim();
+      const confirmPassword = document.querySelector("#confirm-password").value.trim();
+
+      if (name.length < 2) {
+        formMessage.textContent = "Please enter your full name.";
+        formMessage.className = "form-message error";
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        formMessage.textContent = "Please enter a valid email address.";
+        formMessage.className = "form-message error";
+        return;
+      }
+
+      if (password.length < 6) {
+        formMessage.textContent = "Password must be at least 6 characters.";
+        formMessage.className = "form-message error";
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        formMessage.textContent = "Passwords do not match.";
+        formMessage.className = "form-message error";
+        return;
+      }
+
+      formMessage.textContent = "Registration successful. Redirecting to login...";
+      formMessage.className = "form-message success";
+      registerForm.reset();
+
+      setTimeout(() => {
+        window.location.href = "Login.html";
+      }, 1200);
+    });
+  </script>
+</body>
+</html>

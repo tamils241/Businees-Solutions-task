@@ -1,18 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Business Solutions</title>
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Business Solutions</title>
+  <link rel="stylesheet" href="../css/about.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
-    <section class="page-section">
-        <h1>About Us</h1>
-        <p>
-            Business Solutions helps growing companies plan, launch, and improve digital
-            services with practical technology, marketing, and growth support.
-        </p>
+<body class="page-about">
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="brand" href="../index.html"><img src="../images/logo.webp" alt="Business Solutions logo"></a>
+      <input class="nav-check" id="nav-check" type="checkbox">
+      <label class="nav-toggle" for="nav-check" aria-label="Open navigation"><i class="fas fa-bars"></i></label>
+      <div class="nav-panel">
+        <a href="Home.html">Home</a><a href="Dashboard.html">Dashboard</a><a class="active" href="about.html">About</a><a href="services.html">Services</a><a href="solutions.html">Solutions</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a>
+        <div class="nav-actions"><a class="btn btn-ghost" href="Login.html">Login</a><a class="btn btn-primary" href="Register.html">Register</a></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="video-hero compact">
+      <video autoplay muted loop playsinline poster="../images/team.jpg"><source src="../images/businees.mp4" type="video/mp4"></video>
+      <div class="hero-content">
+        <p class="eyebrow">About us</p>
+        <h1>We turn business goals into practical digital systems.</h1>
+        <p>Our team works across strategy, technology, marketing, analytics, and support to help companies grow with confidence.</p>
+      </div>
     </section>
+
+    <section class="section split-section">
+      <div>
+        <p class="eyebrow">Our approach</p>
+        <h2>Clear thinking, useful execution, steady improvement.</h2>
+        <p>We start by understanding your customers, current workflows, and growth gaps. Then we build solutions that are easy to use, easy to measure, and ready to improve over time.</p>
+      </div>
+      <div class="stats-grid">
+        <div><strong>250+</strong><span>Projects Delivered</span></div>
+        <div><strong>98%</strong><span>Client Satisfaction</span></div>
+        <div><strong>12</strong><span>Growth Channels</span></div>
+        <div><strong>24/7</strong><span>Support Mindset</span></div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

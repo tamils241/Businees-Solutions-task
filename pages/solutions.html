@@ -1,18 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solutions | Business Solutions</title>
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solutions | Business Solutions</title>
+  <link rel="stylesheet" href="../css/solution.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
-    <section class="page-section">
-        <h1>Solutions</h1>
-        <p>
-            Our solutions combine strategy, automation, analytics, and customer
-            acquisition systems to help businesses grow with clarity.
-        </p>
+<body class="page-solutions">
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="brand" href="../index.html"><img src="../images/logo.webp" alt="Business Solutions logo"></a>
+      <input class="nav-check" id="nav-check" type="checkbox">
+      <label class="nav-toggle" for="nav-check" aria-label="Open navigation"><i class="fas fa-bars"></i></label>
+      <div class="nav-panel">
+        <a href="Home.html">Home</a><a href="Dashboard.html">Dashboard</a><a href="about.html">About</a><a href="services.html">Services</a><a class="active" href="solutions.html">Solutions</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a>
+        <div class="nav-actions"><a class="btn btn-ghost" href="Login.html">Login</a><a class="btn btn-primary" href="Register.html">Register</a></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="video-hero compact">
+      <video autoplay muted loop playsinline poster="../images/Growth Solutions.jpg"><source src="../images/businees.mp4" type="video/mp4"></video>
+      <div class="hero-content">
+        <p class="eyebrow">Solutions</p>
+        <h1>Practical solutions for real business problems.</h1>
+        <p>Choose focused systems for sales, marketing, operations, analytics, and customer experience.</p>
+      </div>
     </section>
+
+    <section class="section">
+      <div class="solution-list">
+        <article><span>01</span><h3>Sales Growth System</h3><p>Lead capture, CRM setup, follow-up automation, and performance tracking.</p></article>
+        <article><span>02</span><h3>Marketing Engine</h3><p>SEO, social media, paid ads, content calendars, and campaign reporting.</p></article>
+        <article><span>03</span><h3>Operations Dashboard</h3><p>Team workflows, data visibility, ticket tracking, and decision dashboards.</p></article>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

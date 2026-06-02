@@ -4,12 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Solutions</title>
+    <!-- css link -->
     <link rel="stylesheet" href="css/style.css" />
+    
     <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" defer></script>
     <script src="js/script.js" defer></script>
 </head>
 <body>
+  <!-- Loading Screen -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <i class="fa-solid fa-helmet-safety"></i>
+      <img class="loader-logo" src="images/logo.webp" alt="Business Solutions logo" />
+      <div class="spinner"></div>
+    </div>
+  </div>
+  
+  <!-- Main Content -->
     <header class="site-header">
       <nav class="navbar">
         <a class="brand" href="index.html">
@@ -17,29 +30,36 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
        
         </a>
 
-        <button class="nav-toggle" type="button" aria-label="Open navigation">
+        <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
           <i class="fas fa-bars"></i>
         </button>
 
-        <div class="nav-menu">
-          <a href="index.html">Home</a>
-          <a href="pages/about.html">About</a>
-          <a href="#services">Services</a>
-          <a href="pages/solutions.html">Solutions</a>
-          <a href="pages/portfolio.html">Portfolio</a>
-          <a href="pages/contact.html">Contact</a>
-        </div>
+        <div class="nav-panel">
+          <div class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="pages/Dashboard.html">Dashboard</a>
+            <a href="pages/about.html">About</a>
+            <a href="#services">Services</a>
+            <a href="pages/solutions.html">Solutions</a>
+            <a href="pages/portfolio.html">Portfolio</a>
+            <a href="pages/contact.html">Contact</a>
+          </div>
 
-        <div class="nav-actions">
-          <a class="btn btn-login" href="#">Login</a>
-          <a class="btn btn-register" href="#">Register</a>
+          <div class="nav-actions">
+            <a href="pages/Login.html" class="btn btn-login">Login</a>
+            <a href="pages/Register.html" class="btn btn-register">Register</a>
+          </div>
         </div>
+        
       </nav>
       <div class="nav-overlay"></div>
     </header>
 
     <main>
       <section class="hero" id="home">
+        <video class="hero-video" autoplay muted loop playsinline poster="images/hero.webp">
+          <source src="images/businees.mp4" type="video/mp4">
+        </video>
         <div class="hero-content">
           <p class="hero-label">Smart growth for modern teams</p>
           <h1>Build, market, and scale your business with confidence.</h1>
@@ -52,12 +72,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
             <a class="btn btn-outline" href="pages/contact.html">Get Started</a>
           </div>
         </div>
-        <div class="hero-image">
-          <img src="images/hero.webp" alt="Business growth strategy workspace">
-        </div>
       </section>
 
+      <!-- service businees -->
+
       <section class="services" id="services">
+        <video class="services-video" autoplay muted loop playsinline poster="images/services.jpg">
+          <source src="images/businees.mp4" type="video/mp4">
+        </video>
         <div class="container">
           <div class="section-header">
             <h2>Business Solutions</h2>
@@ -69,95 +91,191 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
           <div class="service-grid">
             <div class="service-card">
-              <i class="fas fa-laptop-code"></i>
-              <h3>IT Services</h3>
-              <p>
-                Custom software development, website design, cloud solutions,
-                maintenance, and technical support.
-              </p>
+              <div class="service-image">
+                <img src="images/IT Services.jpg" alt="IT services team working on software dashboards" />
+              </div>
+              <div class="service-content">
+                <i class="fas fa-laptop-code"></i>
+                <h3>IT Services</h3>
+                <p>
+                  Custom software development, website design, cloud solutions,
+                  maintenance, and technical support.
+                </p>
+              </div>
             </div>
 
             <div class="service-card">
-              <i class="fas fa-bullhorn"></i>
-              <h3>Digital Marketing</h3>
-              <p>
-                SEO, social media marketing, PPC campaigns, content marketing,
-                and lead generation strategies.
-              </p>
+              <div class="service-image">
+                <img src="images/Digital Marketing.jpg" alt="Digital marketing campaign analytics on a workspace" />
+              </div>
+              <div class="service-content">
+                <i class="fas fa-bullhorn"></i>
+                <h3>Digital Marketing</h3>
+                <p>
+                  SEO, social media marketing, PPC campaigns, content marketing,
+                  and lead generation strategies.
+                </p>
+              </div>
             </div>
 
             <div class="service-card">
-              <i class="fas fa-mobile-screen"></i>
-              <h3>Mobile Marketing</h3>
-              <p>
-                Reach customers through SMS campaigns, mobile apps,
-                push notifications, and mobile advertising.
-              </p>
+              <div class="service-image">
+                <img src="images/Mobile Marketing.jpg" alt="Mobile marketing content displayed on a smartphone" />
+              </div>
+              <div class="service-content">
+                <i class="fas fa-mobile-screen"></i>
+                <h3>Mobile Marketing</h3>
+                <p>
+                  Reach customers through SMS campaigns, mobile apps,
+                  push notifications, and mobile advertising.
+                </p>
+              </div>
             </div>
 
             <div class="service-card">
-              <i class="fas fa-chart-line"></i>
-              <h3>Business Development</h3>
-              <p>
-                Strategic planning, market expansion, partnership building,
-                and revenue growth solutions.
-              </p>
+              <div class="service-image">
+                <img src="images/businees deve_11zon.jpg" alt="Business development strategy meeting" />
+              </div>
+              <div class="service-content">
+                <i class="fas fa-chart-line"></i>
+                <h3>Business Development</h3>
+                <p>
+                  Strategic planning, market expansion, partnership building,
+                  and revenue growth solutions.
+                </p>
+              </div>
             </div>
 
             <div class="service-card">
-              <i class="fas fa-cart-shopping"></i>
-              <h3>Product Sales</h3>
-              <p>
-                End-to-end sales strategies, customer acquisition,
-                CRM integration, and sales optimization.
-              </p>
+              <div class="service-image">
+                <img src="images/Product Sales.jpg" alt="Product sales data and ecommerce planning" />
+              </div>
+              <div class="service-content">
+                <i class="fas fa-cart-shopping"></i>
+                <h3>Product Sales</h3>
+                <p>
+                  End-to-end sales strategies, customer acquisition,
+                  CRM integration, and sales optimization.
+                </p>
+              </div>
             </div>
 
             <div class="service-card">
-              <i class="fas fa-magnifying-glass-chart"></i>
-              <h3>SEO Optimization</h3>
-              <p>
-                Improve search rankings, website traffic,
-                and online visibility with advanced SEO techniques.
-              </p>
+              <div class="service-image">
+                <img src="images/SEO Optimization.jpg" alt="SEO optimization search and performance metrics" />
+              </div>
+              <div class="service-content">
+                <i class="fas fa-magnifying-glass-chart"></i>
+                <h3>SEO Optimization</h3>
+                <p>
+                  Improve search rankings, website traffic,
+                  and online visibility with advanced SEO techniques.
+                </p>
+              </div>
             </div>
 
             <div class="service-card">
-              <i class="fas fa-pen-ruler"></i>
-              <h3>Brand Marketing</h3>
-              <p>
-                Build a strong brand identity through creative design,
-                storytelling, and targeted campaigns.
-              </p>
+              <div class="service-image">
+                <img src="images/Brand Marketing.jpg" alt="Brand marketing design and identity materials" />
+              </div>
+              <div class="service-content">
+                <i class="fas fa-pen-ruler"></i>
+                <h3>Brand Marketing</h3>
+                <p>
+                  Build a strong brand identity through creative design,
+                  storytelling, and targeted campaigns.
+                </p>
+              </div>
             </div>
 
             <div class="service-card">
-              <i class="fas fa-rocket"></i>
-              <h3>Growth Solutions</h3>
-              <p>
-                Data-driven business strategies focused on increasing
-                customer engagement and profitability.
-              </p>
+              <div class="service-image">
+                <img src="images/Growth Solutions.jpg" alt="Growth strategy chart with rising performance" />
+              </div>
+              <div class="service-content">
+                <i class="fas fa-rocket"></i>
+                <h3>Growth Solutions</h3>
+                <p>
+                  Data-driven business strategies focused on increasing
+                  customer engagement and profitability.
+                </p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-image">
+                <img src="images/CRM Solutions.jpg" alt="CRM dashboard for lead and customer tracking" />
+              </div>
+              <div class="service-content">
+                <i class="fas fa-users-gear"></i>
+                <h3>CRM Solutions</h3>
+                <p>
+                  Manage leads, automate follow-ups, improve customer tracking,
+                  and strengthen long-term client relationships.
+                </p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-image">
+                <img src="images/Data Analytics.jpg" alt="Data analytics reports and business intelligence charts" />
+              </div>
+              <div class="service-content">
+                <i class="fas fa-chart-pie"></i>
+                <h3>Data Analytics</h3>
+                <p>
+                  Turn business data into clear reports, performance insights,
+                  sales forecasts, and smarter growth decisions.
+                </p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-image">
+                <img src="images/Customer Support.jpg" alt="Customer support agent using a helpdesk system" />
+              </div>
+              <div class="service-content">
+                <i class="fas fa-headset"></i>
+                <h3>Customer Support</h3>
+                <p>
+                  Build reliable support systems with helpdesk workflows,
+                  ticket management, chat support, and service tracking.
+                </p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-image">
+                <img src="images/Business Consulting.jpg" alt="Business consulting conversation and planning documents" />
+              </div>
+              <div class="service-content">
+                <i class="fas fa-handshake-angle"></i>
+                <h3>Business Consulting</h3>
+                <p>
+                  Get expert guidance for operations, planning, process improvement,
+                  market strategy, and sustainable business growth.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="stats-section">
+      <section class="stats-section" id="dashboard">
         <div class="stat-box">
-          <strong>250+</strong>
+          <strong class="counter" data-target="250">0</strong>
           <span>Projects Delivered</span>
         </div>
         <div class="stat-box">
-          <strong>98%</strong>
+          <strong class="counter" data-target="98">0</strong>
           <span>Client Satisfaction</span>
         </div>
         <div class="stat-box">
-          <strong>12+</strong>
+          <strong class="counter" data-target="12">0</strong>
           <span>Growth Channels</span>
         </div>
         <div class="stat-box">
-          <strong>24/7</strong>
+          <strong class="counter" data-target="24">0</strong>
           <span>Support Focus</span>
         </div>
       </section>
@@ -233,6 +351,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
           <h3>Company</h3>
           <ul class="footer-list">
             <li><a href="pages/about.html">About Us</a></li>
+            <li><a href="pages/Dashboard.html">Dashboard</a></li>
             <li><a href="pages/services.html">Services</a></li>
             <li><a href="pages/solutions.html">Solutions</a></li>
             <li><a href="pages/portfolio.html">Portfolio</a></li>
@@ -253,10 +372,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         <div class="footer-column footer-newsletter">
           <h3>Growth Updates</h3>
           <p>Get strategy tips, digital marketing ideas, and business improvement notes.</p>
-          <form class="newsletter-form">
-            <input type="email" placeholder="Email address" aria-label="Email address">
+          <form class="newsletter-form" novalidate>
+            <input type="email" placeholder="Email address" aria-label="Email address" required>
             <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
           </form>
+          <p class="newsletter-message" aria-live="polite"></p>
         </div>
       </div>
       <div class="footer-bottom">

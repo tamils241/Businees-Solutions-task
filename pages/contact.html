@@ -1,18 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Business Solutions</title>
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Business Solutions</title>
+  <link rel="stylesheet" href="../css/contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
-    <section class="page-section">
-        <h1>Contact</h1>
-        <p>
-            Share your business goals, project needs, or growth challenges and our
-            team will help shape the next practical step.
-        </p>
+<body class="page-contact">
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="brand" href="../index.html"><img src="../images/logo.webp" alt="Business Solutions logo"></a>
+      <input class="nav-check" id="nav-check" type="checkbox">
+      <label class="nav-toggle" for="nav-check" aria-label="Open navigation"><i class="fas fa-bars"></i></label>
+      <div class="nav-panel">
+        <a href="Home.html">Home</a><a href="Dashboard.html">Dashboard</a><a href="about.html">About</a><a href="services.html">Services</a><a href="solutions.html">Solutions</a><a href="portfolio.html">Portfolio</a><a class="active" href="contact.html">Contact</a>
+        <div class="nav-actions"><a class="btn btn-ghost" href="Login.html">Login</a><a class="btn btn-primary" href="Register.html">Register</a></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="video-hero compact">
+      <video autoplay muted loop playsinline poster="../images/Customer Support.jpg"><source src="../images/businees.mp4" type="video/mp4"></video>
+      <div class="hero-content">
+        <p class="eyebrow">Contact</p>
+        <h1>Tell us what you want to improve next.</h1>
+        <p>Share your goals and our team will help you choose the right technology, marketing, and support plan.</p>
+      </div>
     </section>
+
+    <section class="section contact-layout">
+      <div class="contact-info">
+        <h2>Let’s talk business.</h2>
+        <p><i class="fas fa-location-dot"></i> Business Hub, Selam, India</p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+911234567890">+91 1234567890</a></p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:info@stacklybusinesssolutions.com">info@stacklybusinesssolutions.com</a></p>
+      </div>
+      <form class="contact-form">
+        <input type="text" placeholder="Your name" aria-label="Your name">
+        <input type="email" placeholder="Email address" aria-label="Email address">
+        <input type="text" placeholder="Service needed" aria-label="Service needed">
+        <textarea placeholder="Project details" aria-label="Project details"></textarea>
+        <button class="btn btn-primary" type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
 </body>
 </html>

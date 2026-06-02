@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Business Solutions</title>
+  <link rel="stylesheet" href="../css/Login.css">
+</head>
+<body>
+  <main class="auth-page">
+    <section class="auth-panel">
+      <div class="auth-visual">
+        <a class="auth-brand" href="../index.html">
+          <img src="../images/logo.webp" alt="Business Solutions logo">
+        </a>
+        <div>
+          <p class="visual-label">Business Solutions</p>
+          <h2>Stay connected to every growth move.</h2>
+          <p>Manage your services, support, and business updates from one calm workspace.</p>
+        </div>
+      </div>
+
+      <div class="auth-card">
+        <div class="auth-copy">
+          <p class="auth-label">Welcome back</p>
+          <h1>Login to your account</h1>
+          <p>Access your dashboard, services, and business growth tools.</p>
+        </div>
+
+        <form class="auth-form login-form" novalidate>
+          <label for="login-email">Email address</label>
+          <input id="login-email" type="email" placeholder="you@example.com" required>
+
+          <label for="login-password">Password</label>
+          <input id="login-password" type="password" placeholder="Enter password" required>
+
+          <div class="form-row">
+            <label class="remember">
+              <input type="checkbox">
+              <span>Remember me</span>
+            </label>
+            <button class="link-button forgot-toggle" type="button">Forgot password?</button>
+          </div>
+
+          <p class="form-message" aria-live="polite"></p>
+          <button class="auth-submit" type="submit">Login</button>
+        </form>
+
+        <form class="auth-form forgot-form" novalidate hidden>
+          <label for="forgot-email">Registered email address</label>
+          <input id="forgot-email" type="email" placeholder="you@example.com" required>
+          <p class="forgot-message" aria-live="polite"></p>
+          <button class="auth-submit" type="submit">Send reset link</button>
+          <button class="link-button back-login" type="button">Back to login</button>
+        </form>
+
+        <p class="auth-switch">
+          Don't have an account?
+          <a href="Register.html">Create account</a>
+        </p>
+
+        <a class="back-home" href="../index.html">Back to Home</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const loginForm = document.querySelector(".login-form");
+    const forgotForm = document.querySelector(".forgot-form");
+    const forgotToggle = document.querySelector(".forgot-toggle");
+    const backLogin = document.querySelector(".back-login");
+    const formMessage = document.querySelector(".form-message");
+    const forgotMessage = document.querySelector(".forgot-message");
+    const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+
+    loginForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const email = document.querySelector("#login-email").value.trim();
+      const password = document.querySelector("#login-password").value.trim();
+
+      if (!isValidEmail(email) || password.length < 6) {
+        formMessage.textContent = "Please enter a valid email and password.";
+        formMessage.className = "form-message error";
+        return;
+      }
+
+      formMessage.textContent = "Login successful.";
+      formMessage.className = "form-message success";
+    });
+
+    forgotToggle.addEventListener("click", () => {
+      loginForm.hidden = true;
+      forgotForm.hidden = false;
+    });
+
+    backLogin.addEventListener("click", () => {
+      forgotForm.hidden = true;
+      loginForm.hidden = false;
+      forgotMessage.textContent = "";
+    });
+
+    forgotForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const email = document.querySelector("#forgot-email").value.trim();
+
+      if (!isValidEmail(email)) {
+        forgotMessage.textContent = "Please enter your registered email address.";
+        forgotMessage.className = "forgot-message error";
+        return;
+      }
+
+      forgotMessage.textContent = "Password reset link sent successfully.";
+      forgotMessage.className = "forgot-message success";
+      forgotForm.reset();
+    });
+  </script>
+</body>
+</html>
