@@ -5,6 +5,6 @@ body {
 }
 
 .page-contact .video-hero::after {
-  background: linear-gradient(90deg, rgba(15, 23, 42, 0.94), rgba(220, 38, 38, 0.54), rgba(15, 23, 42, 0.36));
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.94), rgba(22, 163, 74, 0.58), rgba(15, 23, 42, 0.38));
 }
 

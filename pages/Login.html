@@ -26,15 +26,13 @@
           <h1>Login to your account</h1>
           <p>Access your dashboard, services, and business growth tools.</p>
         </div>
-  
+
         <form class="auth-form login-form" novalidate>
-
           <label for="login-role">Sign in as</label>
-
           <select id="login-role" name="role" required>
-          <option value="" disabled selected>Select role</option>
-          <option value="customer">Customer</option>
-          <option value="admin">Admin</option>
+            <option value="" disabled selected>Select role</option>
+            <option value="customer">Customer</option>
+            <option value="admin">Admin</option>
           </select>
 
           <label for="login-email">Email address</label>
@@ -73,84 +71,91 @@
     </section>
   </main>
 
- <script>
-  const loginForm = document.querySelector(".login-form");
-  const forgotForm = document.querySelector(".forgot-form");
-  const forgotToggle = document.querySelector(".forgot-toggle");
-  const backLogin = document.querySelector(".back-login");
-  const formMessage = document.querySelector(".form-message");
-  const forgotMessage = document.querySelector(".forgot-message");
-  const roleSelect = document.querySelector("#login-role");
-  const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+  <script>
+    const loginForm = document.querySelector(".login-form");
+    const forgotForm = document.querySelector(".forgot-form");
+    const forgotToggle = document.querySelector(".forgot-toggle");
+    const backLogin = document.querySelector(".back-login");
+    const formMessage = document.querySelector(".form-message");
+    const forgotMessage = document.querySelector(".forgot-message");
+    const roleSelect = document.querySelector("#login-role");
+    const isValidEmail = (e) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e);
 
-  const dashboards = {
-  admin: "admin_dashboard.html",      // or admin_deshboard.html if that's your file name
-  customer: "customer_dashboard.html",
-};
+    const dashboards = {
+      admin: "admin_Dashboard.html",
+      customer: "customer_deshboard.html",
+    };
 
-  // Pre-select role from Register: Login.html?role=customer
-  const params = new URLSearchParams(window.location.search);
-  const roleFromUrl = params.get("role");
-  if (roleFromUrl && roleSelect && dashboards[roleFromUrl]) {
-    roleSelect.value = roleFromUrl;
-  }
-
-  loginForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const role = roleSelect.value;
-    const email = document.querySelector("#login-email").value.trim();
-    const password = document.querySelector("#login-password").value.trim();
-
-    if (!role) {
-      formMessage.textContent = "Please select Admin or Customer.";
-      formMessage.className = "form-message error";
-      return;
+    function saveAuth(role, email, name) {
+      sessionStorage.setItem("authRole", role);
+      sessionStorage.setItem("authEmail", email);
+      sessionStorage.setItem("authName", name);
+      localStorage.setItem("auth", JSON.stringify({ role, email, name }));
     }
 
-    if (!isValidEmail(email) || password.length < 6) {
-      formMessage.textContent = "Please enter a valid email and password.";
-      formMessage.className = "form-message error";
-      return;
+    const params = new URLSearchParams(window.location.search);
+    const roleFromUrl = params.get("role");
+    if (roleFromUrl && dashboards[roleFromUrl]) {
+      roleSelect.value = roleFromUrl;
     }
 
-    // TODO: call your API; server returns real role
-    formMessage.textContent = "Login successful. Redirecting...";
-    formMessage.className = "form-message success";
+    loginForm.addEventListener("submit", function (event) {
+      event.preventDefault();
 
-    setTimeout(() => {
-      window.location.href = dashboards[role];
-    }, 800);
-  });
+      const role = roleSelect.value;
+      const email = document.querySelector("#login-email").value.trim();
+      const password = document.querySelector("#login-password").value.trim();
 
-  forgotToggle.addEventListener("click", () => {
-    loginForm.hidden = true;
-    forgotForm.hidden = false;
-    formMessage.textContent = "";
-    formMessage.className = "form-message";
-  });
+      if (!role) {
+        formMessage.textContent = "Please select Admin or Customer.";
+        formMessage.className = "form-message error";
+        return;
+      }
 
-  backLogin.addEventListener("click", () => {
-    forgotForm.hidden = true;
-    loginForm.hidden = false;
-    forgotMessage.textContent = "";
-    forgotMessage.className = "forgot-message";
-  });
+      if (!isValidEmail(email) || password.length < 6) {
+        formMessage.textContent = "Please enter a valid email and password.";
+        formMessage.className = "form-message error";
+        return;
+      }
 
-  forgotForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const email = document.querySelector("#forgot-email").value.trim();
+      const profile = JSON.parse(
+        localStorage.getItem("profile:" + email.toLowerCase()) || "{}"
+      );
+      const rawName = profile.name || email.split("@")[0];
+      const displayName = rawName.charAt(0).toUpperCase() + rawName.slice(1);
 
-    if (!isValidEmail(email)) {
-      forgotMessage.textContent = "Please enter your registered email address.";
-      forgotMessage.className = "forgot-message error";
-      return;
-    }
+      saveAuth(role, email, displayName);
 
-    forgotMessage.textContent = "Password reset link sent successfully.";
-    forgotMessage.className = "forgot-message success";
-    forgotForm.reset();
-  });
-</script>
+      formMessage.textContent = "Login successful. Redirecting...";
+      formMessage.className = "form-message success";
+
+      setTimeout(function () {
+        window.location.href = dashboards[role];
+      }, 600);
+    });
+
+    forgotToggle.addEventListener("click", function () {
+      loginForm.hidden = true;
+      forgotForm.hidden = false;
+    });
+
+    backLogin.addEventListener("click", function () {
+      forgotForm.hidden = true;
+      loginForm.hidden = false;
+    });
+
+    forgotForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const email = document.querySelector("#forgot-email").value.trim();
+      if (!isValidEmail(email)) {
+        forgotMessage.textContent = "Please enter your registered email address.";
+        forgotMessage.className = "forgot-message error";
+        return;
+      }
+      forgotMessage.textContent = "Password reset link sent successfully.";
+      forgotMessage.className = "forgot-message success";
+      forgotForm.reset();
+    });
+  </script>
 </body>
 </html>

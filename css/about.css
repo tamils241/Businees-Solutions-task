@@ -1,11 +1,173 @@
 @import url("Home.css");
 
 body {
-  --accent: #16a34a;
+  --accent: #2c72bc;
 }
 
 .page-about .video-hero::after {
   background: linear-gradient(90deg, rgba(15, 23, 42, 0.94), rgba(22, 163, 74, 0.58), rgba(15, 23, 42, 0.38));
+}
+
+.about-mission,
+.process-grid,
+.team-grid {
+  display: grid;
+  gap: 22px;
+}
+
+.about-mission {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding-top: 0;
+}
+
+.about-mission article,
+.process-grid article,
+.team-grid article {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.08);
+}
+
+.about-mission article {
+  padding: 28px;
+}
+
+.about-mission i {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: #ffffff;
+  background: var(--accent, #2c72bc);
+  font-size: 24px;
+}
+
+.about-mission h3,
+.process-grid h3,
+.team-grid h3 {
+  margin: 18px 0 10px;
+  font-size: 22px;
+}
+
+.about-mission p,
+.process-grid p,
+.team-grid p {
+  margin: 0;
+}
+
+.about-process {
+  padding-top: 48px;
+}
+
+.process-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.process-grid article {
+  padding: 24px;
+}
+
+.process-grid span {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: #ffffff;
+  background: #0f172a;
+  font-weight: 900;
+}
+
+.team-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.team-grid article {
+  overflow: hidden;
+}
+
+.team-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.team-grid h3,
+.team-grid p {
+  padding: 0 18px;
+}
+
+.team-grid h3 {
+  margin-top: 18px;
+}
+
+.team-grid p {
+  margin-bottom: 20px;
+  color: #64748b;
+  font-weight: 800;
+}
+
+.about-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 76px;
+  border-radius: 8px;
+  padding: 34px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0f172a, #14532d);
+}
+
+.about-cta h2 {
+  margin-bottom: 0;
+}
+
+.about-cta .eyebrow {
+  color: #bbf7d0;
+}
+
+@media (max-width: 980px) {
+  .about-mission,
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-cta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 620px) {
+  .about-mission,
+  .process-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-mission article,
+  .process-grid article {
+    padding: 22px;
+  }
+
+  .team-grid article {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .about-cta {
+    margin-bottom: 48px;
+    padding: 24px;
+  }
 }
 
 /*footer styles*

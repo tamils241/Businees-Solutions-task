@@ -14,15 +14,15 @@
       <input class="nav-check" id="nav-check" type="checkbox">
       <label class="nav-toggle" for="nav-check" aria-label="Open navigation"><i class="fas fa-bars"></i></label>
       <div class="nav-panel">
-  <p class="nav-user" id="nav-user">
-    <i class="fas fa-user-circle" aria-hidden="true"></i>
-    <span>Hi, <strong id="nav-user-name">Admin</strong></span>
-  </p>
-  <div class="nav-actions">
-  <a class="btn btn-ghost" href="NotFound.html">Help</a>
-  <button class="btn btn-primary" type="button" id="logout-btn">Logout</button>
-</div>
-</div>
+        <p class="nav-user" id="nav-user">
+          <i class="fas fa-user-circle" aria-hidden="true"></i>
+          <span>Hi, <strong id="nav-user-name">Admin</strong></span>
+        </p>
+        <div class="nav-actions">
+          <a class="btn btn-ghost" href="NotFound.html">Help</a>
+          <button class="btn btn-primary" type="button" id="logout-btn">Logout</button>
+        </div>
+      </div>
     </nav>
   </header>
 
@@ -36,6 +36,136 @@
       </div>
     </section>
 
+    <section class="section admin-workspace">
+      <div class="admin-tabs" aria-label="Admin dashboard sections">
+        <button class="admin-tab active" type="button" data-panel="profile-panel">
+          <i class="fas fa-user-shield" aria-hidden="true"></i>
+          <span>Profile</span>
+        </button>
+        <button class="admin-tab" type="button" data-panel="overview-panel">
+          <i class="fas fa-chart-line" aria-hidden="true"></i>
+          <span>Overview</span>
+        </button>
+        <button class="admin-tab" type="button" data-panel="project-panel">
+          <i class="fas fa-diagram-project" aria-hidden="true"></i>
+          <span>Project</span>
+        </button>
+        <button class="admin-tab" type="button" data-panel="setting-panel">
+          <i class="fas fa-gear" aria-hidden="true"></i>
+          <span>Setting</span>
+        </button>
+        <button class="admin-tab" type="button" data-panel="team-panel">
+          <i class="fas fa-users" aria-hidden="true"></i>
+          <span>Team</span>
+        </button>
+      </div>
+
+      <div class="admin-panel-wrap">
+        <article class="admin-panel active" id="profile-panel">
+          <div class="panel-heading">
+            <p class="eyebrow">Profile</p>
+            <h2>Admin view</h2>
+          </div>
+          <div class="profile-view">
+            <div class="profile-avatar"><i class="fas fa-user-shield" aria-hidden="true"></i></div>
+            <div>
+              <h3 id="admin-profile-name">Admin</h3>
+              <p>Manage dashboard access, monitor business activity, and review daily operations.</p>
+            </div>
+          </div>
+          <div class="profile-details">
+            <span>Role <strong>Administrator</strong></span>
+            <span>Status <strong>Active</strong></span>
+            <span>Access <strong>Full dashboard</strong></span>
+          </div>
+        </article>
+
+        <article class="admin-panel" id="overview-panel" hidden>
+          <div class="panel-heading">
+            <p class="eyebrow">Overview</p>
+            <h2>Performance chart</h2>
+          </div>
+          <div class="chart-grid">
+            <div class="bar-chart" aria-label="Overview bar chart">
+              <span style="--value: 72%"><strong>Projects</strong></span>
+              <span style="--value: 86%"><strong>Leads</strong></span>
+              <span style="--value: 64%"><strong>Revenue</strong></span>
+              <span style="--value: 94%"><strong>Support</strong></span>
+            </div>
+            <div class="chart-summary">
+              <strong>94%</strong>
+              <span>Support performance</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="admin-panel" id="project-panel" hidden>
+          <div class="panel-heading">
+            <p class="eyebrow">Project</p>
+            <h2>History and pipeline</h2>
+          </div>
+          <div class="project-view">
+            <div class="pie-chart" aria-label="Project pipeline chart"></div>
+            <ul class="project-history">
+              <li><span>Completed</span><strong>250</strong></li>
+              <li><span>In progress</span><strong>42</strong></li>
+              <li><span>Pending review</span><strong>18</strong></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="admin-panel" id="setting-panel" hidden>
+          <div class="panel-heading">
+            <p class="eyebrow">Setting</p>
+            <h2>Dashboard settings</h2>
+          </div>
+          <div class="settings-list">
+            <label><input type="checkbox" checked> Email notifications</label>
+            <label><input type="checkbox" checked> Weekly report summary</label>
+            <label><input type="checkbox"> Project approval alerts</label>
+          </div>
+          <div class="settings-chart">
+            <span>Profile</span>
+            <div><i style="width: 78%"></i></div>
+            <span>Overview</span>
+            <div><i style="width: 88%"></i></div>
+            <span>Project</span>
+            <div><i style="width: 66%"></i></div>
+          </div>
+        </article>
+
+        <article class="admin-panel" id="team-panel" hidden>
+          <div class="panel-heading">
+            <p class="eyebrow">Team</p>
+            <h2>Team members</h2>
+          </div>
+          <div class="team-grid">
+            <article class="team-card">
+              <img src="../images/Priya Sharma.webp" alt="Priya Sharma, project manager">
+              <div>
+                <h3>Priya Sharma</h3>
+                <p>Project Manager</p>
+              </div>
+            </article>
+            <article class="team-card">
+              <img src="../images/Arun Kumar.webp" alt="Arun Kumar, marketing lead">
+              <div>
+                <h3>Arun Kumar</h3>
+                <p>Marketing Lead</p>
+              </div>
+            </article>
+            <article class="team-card">
+              <img src="../images/Meera Patel.webp" alt="Meera Patel, support lead">
+              <div>
+                <h3>Meera Patel</h3>
+                <p>Support Lead</p>
+              </div>
+            </article>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="section">
       <div class="dashboard-grid">
         <article class="metric-card"><span>Projects</span><strong>250</strong><p>Completed client deliverables</p></article>
@@ -45,102 +175,119 @@
       </div>
     </section>
   </main>
-<!-- footer -->
+  <!-- footer -->
   <footer class="site-footer">
-      <div class="footer-content">
-        <div class="footer-column footer-about">
-          <a class="brand footer-brand" href="index.html">
-            <img class="brand-logo" src="../images/logo.webp" alt="Business Solutions logo">
-          </a>
-          <p>
-            Practical digital services for businesses that want stronger systems,
-            sharper marketing, and steady growth.
-          </p>
-          <div class="social-links">
-            <a href="https://www.facebook.com/login.php/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.linkedin.com/login" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.instagram.com/accounts/login/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/login" aria-label="X Twitter"><i class="fab fa-x-twitter"></i></a>
-          </div>
-        </div>
-
-        <div class="footer-column">
-          <h3>Services</h3>
-          <ul class="footer-list">
-            <li><a href="#services">IT Services</a></li>
-            <li><a href="#services">Digital Marketing</a></li>
-            <li><a href="#services">Mobile Marketing</a></li>
-            <li><a href="#services">Business Development</a></li>
-            <li><a href="#services">SEO Optimization</a></li>
-            <li><a href="#services">Brand Marketing</a></li>
-          </ul>
-        </div>
-
-
-        <div class="footer-column">
-          <h3>Contact</h3>
-          <ul class="footer-list footer-contact">
-            <li><i class="fas fa-location-dot"></i><span>Business Hub, Selam, India</span></li>
-            <li><i class="fas fa-phone"></i><a href="tel:+919876543210">+91 1234567890</a></li>
-            <li><i class="fas fa-envelope"></i><a href="mailto:info@businesssolutions.com">info@stacklybusinesssolutions.com</a></li>
-            <li><i class="fas fa-clock"></i><span>Mon - Sat, 9:00 AM - 7:00 PM</span></li>
-          </ul>
-        </div>
-
-        <div class="footer-column footer-newsletter">
-          <h3>Growth Updates</h3>
-          <p>Get strategy tips, digital marketing ideas, and business improvement notes.</p>
-          <form class="newsletter-form" novalidate>
-            <input type="email" placeholder="Email address" aria-label="Email address" required>
-            <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
-          </form>
-          <p class="newsletter-message" aria-live="polite"></p>
+    <div class="footer-content">
+      <div class="footer-column footer-about">
+        <a class="brand footer-brand" href="index.html">
+          <img class="brand-logo" src="../images/logo.webp" alt="Business Solutions logo">
+        </a>
+        <p>
+          Practical digital services for businesses that want stronger systems,
+          sharper marketing, and steady growth.
+        </p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/login.php/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.linkedin.com/login" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/accounts/login/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/login" aria-label="X Twitter"><i class="fab fa-x-twitter"></i></a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>Copyright 2026 Stackly Business Solutions. All rights reserved.</p>
-        <div>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms</a>
-        </div>
+
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <ul class="footer-list footer-contact">
+          <li><i class="fas fa-location-dot"></i><span>Business Hub, Selam, India</span></li>
+          <li><i class="fas fa-phone"></i><a href="tel:+919876543210">+91 1234567890</a></li>
+          <li><i class="fas fa-envelope"></i><a href="mailto:info@businesssolutions.com">info@stacklybusinesssolutions.com</a></li>
+          <li><i class="fas fa-clock"></i><span>Mon - Sat, 9:00 AM - 7:00 PM</span></li>
+        </ul>
       </div>
-    </footer>
-</body>
-    <!-- email validation script -->
-<script>
+
+      <div class="footer-column footer-newsletter">
+        <h3>Growth Updates</h3>
+        <p>Get strategy tips, digital marketing ideas, and business improvement notes.</p>
+        <form class="newsletter-form" novalidate>
+          <input type="email" placeholder="Email address" aria-label="Email address" required>
+          <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+        </form>
+        <p class="newsletter-message" aria-live="polite"></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright 2026 Stackly Business Solutions. All rights reserved.</p>
+      <div>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- email validation script -->
+  <script>
   const newsletterForm = document.querySelector(".newsletter-form");
   const newsletterInput = newsletterForm ? newsletterForm.querySelector("input[type='email']") : null;
   const newsletterMessage = document.querySelector(" .newsletter-message");
-if (newsletterForm && newsletterInput && newsletterMessage) {
-  const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+  const adminTabs = document.querySelectorAll(".admin-tab");
+  const adminPanels = document.querySelectorAll(".admin-panel");
+  const savedAdminName = sessionStorage.getItem("authName") || "Admin";
+  const navUserName = document.querySelector("#nav-user-name");
+  const profileName = document.querySelector("#admin-profile-name");
 
-  const showNewsletterMessage = (message, type) => {
-    newsletterMessage.textContent = message;
-    newsletterMessage.className = `newsletter-message ${type}`;
-  };
+  if (navUserName) {
+    navUserName.textContent = savedAdminName;
+  }
 
-  document.getElementById("logout-btn")?.addEventListener("click", () => {
-    sessionStorage.removeItem("authRole");
-    sessionStorage.removeItem("authEmail");
-    sessionStorage.removeItem("authName");
-    window.location.href = "Login.html";
+  if (profileName) {
+    profileName.textContent = savedAdminName;
+  }
+
+  adminTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const panelId = tab.dataset.panel;
+
+      adminTabs.forEach((item) => item.classList.remove("active"));
+      adminPanels.forEach((panel) => {
+        const isActive = panel.id === panelId;
+        panel.hidden = !isActive;
+        panel.classList.toggle("active", isActive);
+      });
+
+      tab.classList.add("active");
+    });
   });
 
-  newsletterForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+  if (newsletterForm && newsletterInput && newsletterMessage) {
+    const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
 
-    const email = newsletterInput.value.trim();
+    const showNewsletterMessage = (message, type) => {
+      newsletterMessage.textContent = message;
+      newsletterMessage.className = `newsletter-message ${type}`;
+    };
 
-    if (!isValidEmail(email)) {
-      showNewsletterMessage("Please enter a valid email address.", "error");
-      newsletterInput.focus();
-      return;
-    }
+    document.getElementById("logout-btn")?.addEventListener("click", () => {
+      sessionStorage.removeItem("authRole");
+      sessionStorage.removeItem("authEmail");
+      sessionStorage.removeItem("authName");
+      window.location.href = "Login.html";
+    });
 
-    showNewsletterMessage("Your email has been submitted successfully.", "success");
-    newsletterForm.reset();
-  });
-}
-</script>
+    newsletterForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const email = newsletterInput.value.trim();
+
+      if (!isValidEmail(email)) {
+        showNewsletterMessage("Please enter a valid email address.", "error");
+        newsletterInput.focus();
+        return;
+      }
+
+      showNewsletterMessage("Your email has been submitted successfully.", "success");
+      newsletterForm.reset();
+    });
+  }
+  </script>
+</body>
 
 </html>

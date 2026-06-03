@@ -5,5 +5,162 @@ body {
 }
 
 .page-solutions .video-hero::after {
-  background: linear-gradient(90deg, rgba(15, 23, 42, 0.94), rgba(234, 88, 12, 0.56), rgba(15, 23, 42, 0.36));
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.94), rgba(22, 163, 74, 0.58), rgba(15, 23, 42, 0.38));
+}
+
+.solution-cards,
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.solution-cards {
+  padding-top: 0;
+}
+
+.solution-cards article,
+.workflow-steps article,
+.industry-grid article {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.08);
+}
+
+.solution-cards article {
+  overflow: hidden;
+}
+
+.solution-cards img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  display: block;
+  object-fit: cover;
+}
+
+.solution-cards div {
+  padding: 24px;
+}
+
+.solution-cards i,
+.industry-grid i {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: #ffffff;
+  background: var(--accent, #ea580c);
+  font-size: 22px;
+}
+
+.solution-cards h3,
+.industry-grid h3 {
+  margin: 18px 0 10px;
+  font-size: 22px;
+}
+
+.solution-cards p,
+.industry-grid p,
+.workflow-steps p {
+  margin: 0;
+}
+
+.solution-workflow {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 34px;
+  align-items: start;
+}
+
+.workflow-steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.workflow-steps article {
+  padding: 22px;
+}
+
+.workflow-steps span {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: #ffffff;
+  background: #0f172a;
+  font-weight: 900;
+}
+
+.workflow-steps strong {
+  display: block;
+  margin: 16px 0 8px;
+  color: #0f172a;
+  font-size: 20px;
+}
+
+.industry-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.industry-grid article {
+  padding: 24px;
+}
+
+.solution-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 76px;
+  border-radius: 8px;
+  padding: 34px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0f172a, #7c2d12);
+}
+
+.solution-cta h2 {
+  margin-bottom: 0;
+}
+
+.solution-cta .eyebrow {
+  color: #fed7aa;
+}
+
+@media (max-width: 980px) {
+  .solution-cards,
+  .industry-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .solution-workflow {
+    grid-template-columns: 1fr;
+  }
+
+  .solution-cta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 620px) {
+  .solution-cards,
+  .workflow-steps,
+  .industry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .solution-cards div,
+  .workflow-steps article,
+  .industry-grid article {
+    padding: 22px;
+  }
+
+  .solution-cta {
+    margin-bottom: 48px;
+    padding: 24px;
+  }
 }

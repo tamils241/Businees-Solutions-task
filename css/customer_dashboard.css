@@ -53,6 +53,176 @@ body.page-customer {
   margin-top: 4px;
 }
 
+.customer-projects {
+  padding-top: 18px;
+}
+
+.customer-project-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.project-list {
+  display: grid;
+  gap: 16px;
+}
+
+.project-card,
+.project-chart-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.08);
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  padding: 22px;
+}
+
+.project-card h3,
+.project-chart-card h3 {
+  margin: 10px 0 8px;
+  color: #0f172a;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.project-card p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.project-card strong {
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--accent, #0891b2);
+  background: rgba(8, 145, 178, 0.1);
+  font-size: 22px;
+}
+
+.project-status {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0 10px;
+  color: #0f172a;
+  background: #e2e8f0;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.project-status.active {
+  color: #0f766e;
+  background: #ccfbf1;
+}
+
+.project-status.review {
+  color: #1d4ed8;
+  background: #dbeafe;
+}
+
+.project-status.pending {
+  color: #b45309;
+  background: #fef3c7;
+}
+
+.project-chart-card {
+  padding: 24px;
+}
+
+.panel-heading {
+  margin-bottom: 18px;
+}
+
+.panel-heading .eyebrow {
+  margin-bottom: 8px;
+}
+
+.customer-bar-chart {
+  min-height: 260px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(42px, 1fr));
+  gap: 14px;
+  align-items: end;
+  padding: 16px;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.customer-bar-chart span {
+  min-height: 200px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: rgba(8, 145, 178, 0.12);
+}
+
+.customer-bar-chart span::before {
+  position: absolute;
+  inset: auto 0 0;
+  height: var(--value);
+  content: "";
+  background: linear-gradient(180deg, #22d3ee, var(--accent, #0891b2));
+}
+
+.customer-bar-chart strong {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-size: 12px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.customer-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.document-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.document-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 14px;
+  color: #475569;
+  background: #f8fafc;
+  font-weight: 800;
+}
+
+.document-list a {
+  flex: 0 0 auto;
+  color: var(--accent, #0891b2);
+}
+
 .nav-user {
   margin: 0;
   display: inline-flex;
@@ -87,7 +257,7 @@ body.page-customer {
 .form-message.error { color: #dc2626; }
 
 .customer-support-form label {
-  font-size: 30px;
+  font-size: 17px;
   font-weight: 700;
   color: #0f172a;
   margin: 0;
@@ -306,8 +476,25 @@ body.page-customer {
   flex-wrap: wrap;
 }
 
+.page-customer .footer-content {
+  grid-template-columns: minmax(260px, 1.3fr) minmax(220px, 0.9fr) minmax(260px, 1fr);
+}
+
 /* Tablet */
 @media (max-width: 980px) {
+  .customer-project-layout,
+  .customer-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-chart-card {
+    max-width: none;
+  }
+
+  .page-customer .footer-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .site-footer {
     padding: 56px 24px 24px;
   }
@@ -337,6 +524,43 @@ body.page-customer {
 
 /* Mobile */
 @media (max-width: 620px) {
+  .customer-projects {
+    padding-top: 8px;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .project-card strong {
+    width: 68px;
+    height: 68px;
+  }
+
+  .project-chart-card {
+    padding: 20px;
+  }
+
+  .customer-bar-chart {
+    min-height: 220px;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .customer-bar-chart span {
+    min-height: 160px;
+  }
+
+  .customer-bar-chart strong {
+    font-size: 11px;
+  }
+
+  .document-list li {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
   .site-footer {
     padding: 48px 18px 20px;
   }

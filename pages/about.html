@@ -51,6 +51,70 @@
         <div><strong>24/7</strong><span>Support Mindset</span></div>
       </div>
     </section>
+
+    <section class="section about-mission">
+      <article>
+        <i class="fas fa-bullseye" aria-hidden="true"></i>
+        <h3>Our mission</h3>
+        <p>Help businesses replace scattered work with reliable systems, clear data, and practical digital growth plans.</p>
+      </article>
+      <article>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <h3>Our vision</h3>
+        <p>Build a service experience where strategy, technology, marketing, and support work together without confusion.</p>
+      </article>
+      <article>
+        <i class="fas fa-handshake" aria-hidden="true"></i>
+        <h3>Our promise</h3>
+        <p>Stay transparent, measure what matters, and keep improving each solution after launch.</p>
+      </article>
+    </section>
+
+    <section class="section about-process">
+      <div class="section-header">
+        <p class="eyebrow">How we work</p>
+        <h2>A simple process for stronger outcomes.</h2>
+        <p>Every project moves through focused steps so your team can see progress and make better decisions.</p>
+      </div>
+      <div class="process-grid">
+        <article><span>01</span><h3>Discover</h3><p>We map goals, customers, tools, and current business challenges.</p></article>
+        <article><span>02</span><h3>Plan</h3><p>We define priorities, timelines, content, systems, and success metrics.</p></article>
+        <article><span>03</span><h3>Build</h3><p>We create practical digital assets, workflows, campaigns, and dashboards.</p></article>
+        <article><span>04</span><h3>Improve</h3><p>We review results, fix gaps, and keep the solution moving with your business.</p></article>
+      </div>
+    </section>
+
+    <section class="section about-team">
+      <div class="section-header">
+        <p class="eyebrow">Our team</p>
+        <h2>People focused on practical business growth.</h2>
+      </div>
+      <div class="team-grid">
+        <article>
+          <img src="../images/Priya Sharma.webp" alt="Priya Sharma">
+          <h3>Priya Sharma</h3>
+          <p>Project Manager</p>
+        </article>
+        <article>
+          <img src="../images/Arun Kumar.webp" alt="Arun Kumar">
+          <h3>Arun Kumar</h3>
+          <p>Marketing Lead</p>
+        </article>
+        <article>
+          <img src="../images/Meera Patel.webp" alt="Meera Patel">
+          <h3>Meera Patel</h3>
+          <p>Support Lead</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section about-cta">
+      <div>
+        <p class="eyebrow">Ready to grow</p>
+        <h2>Let&apos;s build the system your business needs next.</h2>
+      </div>
+      <a class="btn btn-primary" href="NotFound.html">Start a Project</a>
+    </section>
   </main>
 
   <!-- footer -->
@@ -123,35 +187,35 @@
         </div>
       </div>
     </footer>
-</body>
 
-<!-- email validation script -->
-<script>
+  <!-- email validation script -->
+  <script>
   const newsletterForm = document.querySelector(".newsletter-form");
   const newsletterInput = newsletterForm ? newsletterForm.querySelector("input[type='email']") : null;
   const newsletterMessage = document.querySelector(" .newsletter-message");
-if (newsletterForm && newsletterInput && newsletterMessage) {
-  const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+  if (newsletterForm && newsletterInput && newsletterMessage) {
+    const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
 
-  const showNewsletterMessage = (message, type) => {
-    newsletterMessage.textContent = message;
-    newsletterMessage.className = `newsletter-message ${type}`;
-  };
+    const showNewsletterMessage = (message, type) => {
+      newsletterMessage.textContent = message;
+      newsletterMessage.className = `newsletter-message ${type}`;
+    };
 
-  newsletterForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+    newsletterForm.addEventListener("submit", (event) => {
+      event.preventDefault();
 
-    const email = newsletterInput.value.trim();
+      const email = newsletterInput.value.trim();
 
-    if (!isValidEmail(email)) {
-      showNewsletterMessage("Please enter a valid email address.", "error");
-      newsletterInput.focus();
-      return;
-    }
+      if (!isValidEmail(email)) {
+        showNewsletterMessage("Please enter a valid email address.", "error");
+        newsletterInput.focus();
+        return;
+      }
 
-    showNewsletterMessage("Your email has been submitted successfully.", "success");
-    newsletterForm.reset();
-  });
-}
-</script>
+      showNewsletterMessage("Your email has been submitted successfully.", "success");
+      newsletterForm.reset();
+    });
+  }
+  </script>
+</body>
 </html>
