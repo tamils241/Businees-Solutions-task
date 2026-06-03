@@ -1,18 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Business Solutions</title>
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Business Solutions</title>
+  <link rel="stylesheet" href="../css/Portfolio.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
-    <section class="page-section">
-        <h1>Portfolio</h1>
+<body class="page-portfolio">
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="brand" href="../index.html"><img src="../images/logo.webp" alt="Business Solutions logo"></a>
+      <input class="nav-check" id="nav-check" type="checkbox">
+      <label class="nav-toggle" for="nav-check" aria-label="Open navigation"><i class="fas fa-bars"></i></label>
+      <div class="nav-panel">
+        <a href="../index.html">Home</a>
+        <a href="Dashboard.html">Dashboard</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="solutions.html">Solutions</a>
+        <a class="active" href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+        <div class="nav-actions">
+          <a class="btn btn-ghost" href="Login.html">Login</a>
+          <a class="btn btn-primary" href="Register.html">Register</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="video-hero portfolio-hero">
+      <video autoplay muted loop playsinline poster="../images/hero.webp">
+        <source src="../images/businees.mp4" type="video/mp4">
+      </video>
+      <div class="hero-content">
+        <p class="eyebrow">Portfolio</p>
+        <h1>Business work built for stronger sales, systems, and customer growth.</h1>
         <p>
-            A collection of business, marketing, technology, and growth projects can
-            be showcased here as the company portfolio expands.
+          Explore digital projects across websites, marketing campaigns, CRM systems,
+          analytics dashboards, support workflows, and brand development.
         </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-light" href="contact.html">Start a Project</a>
+        </div>
+      </div>
     </section>
+
+    <section class="section portfolio-intro">
+      <div class="section-header">
+        <p class="eyebrow">Selected outcomes</p>
+        <h2>Portfolio highlights from practical business solutions.</h2>
+        <p>
+          Each project is planned around measurable improvement: clearer customer
+          journeys, better operations, smarter reporting, and more reliable growth.
+        </p>
+      </div>
+      <div class="portfolio-metrics">
+        <article>
+          <strong>45+</strong>
+          <span>Digital launches</span>
+        </article>
+        <article>
+          <strong>32%</strong>
+          <span>Average lead lift</span>
+        </article>
+        <article>
+          <strong>18</strong>
+          <span>Industries served</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="portfolio-grid">
+        <article class="portfolio-card">
+          <img src="../images/IT Services.jpg" alt="Software dashboard project for business operations">
+          <div>
+            <span>Technology</span>
+            <h3>Operations Dashboard</h3>
+            <p>Custom reporting workspace for sales, support, and management teams.</p>
+            <ul>
+              <li>Live performance reports</li>
+              <li>Role-based workflows</li>
+              <li>Cloud-ready setup</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="portfolio-card">
+          <img src="../images/Digital Marketing.jpg" alt="Digital marketing analytics campaign workspace">
+          <div>
+            <span>Marketing</span>
+            <h3>Lead Growth Campaign</h3>
+            <p>SEO, paid media, and landing page strategy for a service business.</p>
+            <ul>
+              <li>Conversion-focused pages</li>
+              <li>Search visibility plan</li>
+              <li>Weekly campaign reports</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="portfolio-card">
+          <img src="../images/CRM Solutions.jpg" alt="CRM solution interface for customer tracking">
+          <div>
+            <span>CRM</span>
+            <h3>Customer Pipeline System</h3>
+            <p>Lead tracking and follow-up automation for a growing sales team.</p>
+            <ul>
+              <li>Contact history</li>
+              <li>Automated reminders</li>
+              <li>Sales stage tracking</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="portfolio-card">
+          <img src="../images/Brand Marketing.jpg" alt="Brand identity and marketing materials project">
+          <div>
+            <span>Branding</span>
+            <h3>Brand Refresh Program</h3>
+            <p>Visual identity, content direction, and social media brand system.</p>
+            <ul>
+              <li>Logo usage kit</li>
+              <li>Campaign templates</li>
+              <li>Brand voice guide</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="portfolio-card">
+          <img src="../images/Data Analytics.jpg" alt="Data analytics dashboard with business reports">
+          <div>
+            <span>Analytics</span>
+            <h3>Decision Insights Suite</h3>
+            <p>Executive dashboards for revenue, service quality, and customer trends.</p>
+            <ul>
+              <li>KPI scorecards</li>
+              <li>Trend analysis</li>
+              <li>Monthly planning data</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="portfolio-card">
+          <img src="../images/Customer Support.jpg" alt="Customer support team using helpdesk tools">
+          <div>
+            <span>Support</span>
+            <h3>Helpdesk Workflow Build</h3>
+            <p>Ticket management process with faster routing and better follow-up.</p>
+            <ul>
+              <li>Priority queues</li>
+              <li>Response tracking</li>
+              <li>Service reports</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section process-band">
+      <div class="section-header">
+        <p class="eyebrow">How projects move</p>
+        <h2>Focused delivery from idea to measurable result.</h2>
+      </div>
+      <div class="process-grid">
+        <article><i class="fas fa-magnifying-glass-chart"></i><h3>Discover</h3><p>We review goals, customers, workflows, and current performance.</p></article>
+        <article><i class="fas fa-diagram-project"></i><h3>Build</h3><p>We design practical systems, pages, campaigns, and dashboards.</p></article>
+        <article><i class="fas fa-chart-line"></i><h3>Improve</h3><p>We measure results and refine the work for stronger long-term value.</p></article>
+      </div>
+    </section>
+
+    <section class="portfolio-cta">
+      <div>
+        <p class="eyebrow">Ready when you are</p>
+        <h2>Bring your next business project into focus.</h2>
+        <p>Share your goal and we will help shape the right digital solution.</p>
+      </div>
+      <a class="btn btn-primary" href="contact.html">Contact Us</a>
+    </section>
+  </main>
+
+  <!-- footer -->
+  <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-column footer-about">
+          <a class="brand footer-brand" href="index.html">
+            <img class="brand-logo" src="../images/logo.webp" alt="Business Solutions logo">
+          </a>
+          <p>
+            Practical digital services for businesses that want stronger systems,
+            sharper marketing, and steady growth.
+          </p>
+         <div class="social-links">
+            <a href="https://www.facebook.com/login.php/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/login" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/accounts/login/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/login" aria-label="X Twitter"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul class="footer-list">
+            <li><a href="#services">IT Services</a></li>
+            <li><a href="#services">Digital Marketing</a></li>
+            <li><a href="#services">Mobile Marketing</a></li>
+            <li><a href="#services">Business Development</a></li>
+            <li><a href="#services">SEO Optimization</a></li>
+            <li><a href="#services">Brand Marketing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Company</h3>
+          <ul class="footer-list">
+            <li><a href="pages/about.html">About Us</a></li>
+            <li><a href="pages/Dashboard.html">Dashboard</a></li>
+            <li><a href="pages/services.html">Services</a></li>
+            <li><a href="pages/solutions.html">Solutions</a></li>
+            <li><a href="pages/portfolio.html">Portfolio</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <ul class="footer-list footer-contact">
+            <li><i class="fas fa-location-dot"></i><span>Business Hub, Selam, India</span></li>
+            <li><i class="fas fa-phone"></i><a href="tel:+919876543210">+91 1234567890</a></li>
+            <li><i class="fas fa-envelope"></i><a href="mailto:info@businesssolutions.com">info@stacklybusinesssolutions.com</a></li>
+            <li><i class="fas fa-clock"></i><span>Mon - Sat, 9:00 AM - 7:00 PM</span></li>
+          </ul>
+        </div>
+
+        <div class="footer-column footer-newsletter">
+          <h3>Growth Updates</h3>
+          <p>Get strategy tips, digital marketing ideas, and business improvement notes.</p>
+          <form class="newsletter-form" novalidate>
+            <input type="email" placeholder="Email address" aria-label="Email address" required>
+            <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+          </form>
+          <p class="newsletter-message" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright 2026 Stackly Business Solutions. All rights reserved.</p>
+        <div>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </footer>
 </body>
+    <!-- email validation script -->
+<script>
+  const newsletterForm = document.querySelector(".newsletter-form");
+  const newsletterInput = newsletterForm ? newsletterForm.querySelector("input[type='email']") : null;
+  const newsletterMessage = document.querySelector(" .newsletter-message");
+if (newsletterForm && newsletterInput && newsletterMessage) {
+  const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+
+  const showNewsletterMessage = (message, type) => {
+    newsletterMessage.textContent = message;
+    newsletterMessage.className = `newsletter-message ${type}`;
+  };
+
+  newsletterForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const email = newsletterInput.value.trim();
+
+    if (!isValidEmail(email)) {
+      showNewsletterMessage("Please enter a valid email address.", "error");
+      newsletterInput.focus();
+      return;
+    }
+
+    showNewsletterMessage("Your email has been submitted successfully.", "success");
+    newsletterForm.reset();
+  });
+}
+</script>
 </html>
