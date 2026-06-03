@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account | Business Solutions</title>
+  <link rel="stylesheet" href="../css/customer_Dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="page-dashboard page-customer">
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="brand" href="../index.html">
+        <img src="../images/logo.webp" alt="Business Solutions logo">
+      </a>
+      <input class="nav-check" id="nav-check" type="checkbox">
+      <label class="nav-toggle" for="nav-check" aria-label="Open navigation">
+        <i class="fas fa-bars"></i>
+      </label>
+      <div class="nav-panel">
+        <p class="nav-user">
+          <i class="fas fa-user-circle" aria-hidden="true"></i>
+          <span>Hi, <strong id="nav-user-name">Customer</strong></span>
+        </p>
+        <div class="nav-actions">
+          <a class="btn btn-ghost" href="NotFound.html">Help</a>
+          <button class="btn btn-primary" type="button" id="logout-btn">Logout</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="video-hero compact">
+      <video autoplay muted loop playsinline poster="../images/Data Analytics.jpg">
+        <source src="../images/businees.mp4" type="video/mp4">
+      </video>
+      <div class="hero-content">
+        <p class="eyebrow">Customer portal</p>
+        <h1>Welcome back — manage your projects and support in one place.</h1>
+        <p>View progress, open tickets, and download updates without waiting on email.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="NotFound1.html">My projects</a>
+          <a class="btn btn-light" href="NotFound1.html">Get support</a>
+        </div>
+      </div>
+    </section>
+    <!-- Metrics -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Your overview</h2>
+        <p>A quick snapshot of your account activity.</p>
+      </div>
+      <div class="dashboard-grid">
+        <article class="metric-card">
+          <span>Active projects</span>
+          <strong>3</strong>
+          <p>In progress with our team</p>
+        </article>
+        <article class="metric-card">
+          <span>Open tickets</span>
+          <strong>1</strong>
+          <p>Awaiting response</p>
+        </article>
+        <article class="metric-card">
+          <span>Documents</span>
+          <strong>12</strong>
+          <p>Reports and invoices</p>
+        </article>
+        <article class="metric-card">
+          <span>Next review</span>
+          <strong>Jun 12</strong>
+          <p>Scheduled check-in call</p>
+        </article>
+      </div>
+    </section>
+    <!-- Quick actions -->
+    <section class="section" id="quick-actions">
+      <div class="section-header">
+        <h2>Quick actions</h2>
+        <p>Common tasks for your business account.</p>
+      </div>
+      <div class="feature-grid customer-actions">
+        <article class="feature-card">
+          <i class="fas fa-file-invoice"></i>
+          <h3>View invoices</h3>
+          <p>Download billing history and payment receipts.</p>
+          <a class="btn btn-primary" href="NotFound1.html">Open invoices</a>
+        </article>
+        <article class="feature-card">
+          <i class="fas fa-headset"></i>
+          <h3>Contact support</h3>
+          <p>Send a message to your account manager.</p>
+          <a class="btn btn-primary" href="NotFound1.html">New ticket</a>
+        </article>
+        <article class="feature-card">
+          <i class="fas fa-user-pen"></i>
+          <h3>Update profile</h3>
+          <p>Change contact details and notification settings.</p>
+          <a class="btn btn-primary" href="NotFound1.html">Edit profile</a>
+        </article>
+      </div>
+    </section>
+    <!-- Projects + activity -->
+    <section class="section split-section" id="my-projects">
+      <div>
+        <div class="section-header">
+          <h2>My projects</h2>
+          <p>Status of work we are delivering for you.</p>
+        </div>
+        <div class="solution-list">
+          <article>
+            <span>01</span>
+            <div>
+              <h3>Website redesign</h3>
+              <p>Design review — 72% complete. Next milestone: content upload.</p>
+            </div>
+          </article>
+          <article>
+            <span>02</span>
+            <div>
+              <h3>SEO campaign</h3>
+              <p>Month 2 reporting ready. Keyword rankings improving in 8 regions.</p>
+            </div>
+          </article>
+          <article>
+            <span>03</span>
+            <div>
+              <h3>CRM setup</h3>
+              <p>Kickoff scheduled. Please confirm user list by Friday.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+      <aside class="activity-panel">
+        <h3>Recent activity</h3>
+        <ul class="activity-list">
+          <li><i class="fas fa-circle-check"></i> Invoice #1042 marked paid</li>
+          <li><i class="fas fa-comment"></i> Support replied to ticket #88</li>
+          <li><i class="fas fa-upload"></i> New file: Q2-performance.pdf</li>
+          <li><i class="fas fa-calendar"></i> Meeting booked for Jun 12, 10:00 AM</li>
+        </ul>
+      </aside>
+    </section>
+    <!-- Support -->
+    <section class="section contact-layout" id="support">
+      <div class="contact-info">
+        <div class="section-header">
+          <h2>Need help?</h2>
+          <p>Reach our team or submit a short request.</p>
+        </div>
+        <p><i class="fas fa-phone"></i> +91 1234567890</p>
+        <p><i class="fas fa-envelope"></i> support@stacklybusinesssolutions.com</p>
+        <p><i class="fas fa-clock"></i> Mon – Sat, 9:00 AM – 7:00 PM</p>
+      </div>
+
+      <form class="contact-form customer-support-form" novalidate>
+  <label for="support-subject">Subject</label>
+  <input
+    type="text"
+    id="support-subject"
+    name="subject"
+    placeholder="Brief subject"
+    required
+  >
+
+  <label for="support-issue">Describe your issue</label>
+  <textarea
+    id="support-issue"
+    name="issue"
+    placeholder="Tell us what you need help with..."
+    required
+  ></textarea>
+
+  <button class="auth-submit" type="submit">Submit request</button>
+  <p class="form-message" aria-live="polite"></p>
+</form>
+    </section>
+  </main>
+  
+<!-- footer -->
+  <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-column footer-about">
+          <a class="brand footer-brand" href="index.html">
+            <img class="brand-logo" src="../images/logo.webp" alt="Business Solutions logo">
+          </a>
+          <p>
+            Practical digital services for businesses that want stronger systems,
+            sharper marketing, and steady growth.
+          </p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/login.php/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/login" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/accounts/login/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/login" aria-label="X Twitter"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul class="footer-list">
+            <li><a href="NotFound1.html">IT Services</a></li>
+            <li><a href="NotFound1.html">Digital Marketing</a></li>
+            <li><a href="NotFound1.html">Mobile Marketing</a></li>
+            <li><a href="NotFound1.html">Business Development</a></li>
+            <li><a href="NotFound1.html">SEO Optimization</a></li>
+            <li><a href="NotFound1.html">Brand Marketing</a></li>
+          </ul>
+        </div>
+
+
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <ul class="footer-list footer-contact">
+            <li><i class="fas fa-location-dot"></i><span>Business Hub, Selam, India</span></li>
+            <li><i class="fas fa-phone"></i><a href="tel:+919876543210">+91 1234567890</a></li>
+            <li><i class="fas fa-envelope"></i><a href="mailto:info@businesssolutions.com">info@stacklybusinesssolutions.com</a></li>
+            <li><i class="fas fa-clock"></i><span>Mon - Sat, 9:00 AM - 7:00 PM</span></li>
+          </ul>
+        </div>
+
+        <div class="footer-column footer-newsletter">
+          <h3>Growth Updates</h3>
+          <p>Get strategy tips, digital marketing ideas, and business improvement notes.</p>
+          <form class="newsletter-form" novalidate>
+            <input type="email" placeholder="Email address" aria-label="Email address" required>
+            <button type="submit" aria-label="Subscribe">
+                <i class="fas fa-paper-plane"></i></button>
+          </form>
+          <p class="newsletter-message" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright 2026 Stackly Business Solutions. All rights reserved.</p>
+        <div>
+          <a href="NotFound1.html">Privacy Policy</a>
+          <a href="NotFound1.html">Terms</a>
+        </div>
+      </div>
+    </footer>
+</body>
+    <!-- email validation script -->
+<script>
+  const supportForm = document.querySelector(".customer-support-form");
+  const subjectInput = document.getElementById("support-subject");
+  const issueInput = document.getElementById("support-issue");
+  const formMessage = supportForm?.querySelector(".form-message");
+
+  if (supportForm && subjectInput && issueInput && formMessage) {
+    const showMessage = (text, type) => {
+      formMessage.textContent = text;
+      formMessage.className = `form-message ${type}`;
+    };
+
+    supportForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const subject = subjectInput.value.trim();
+      const issue = issueInput.value.trim();
+
+      if (subject.length < 2) {
+        showMessage("Please enter a subject (at least 2 characters).", "error");
+        subjectInput.focus();
+        return;
+      }
+
+      if (issue.length < 10) {
+        showMessage("Please describe your issue (at least 10 characters).", "error");
+        issueInput.focus();
+        return;
+      }
+
+      showMessage(
+        "Request submitted successfully. We will reply within 1 business day.",
+        "success"
+      );
+      supportForm.reset();
+    });
+  }
+</script>
+
+</html>

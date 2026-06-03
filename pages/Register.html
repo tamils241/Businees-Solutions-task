@@ -28,6 +28,14 @@
         </div>
 
         <form class="auth-form register-form" novalidate>
+
+          <label for="register-role">Register as</label>
+<select id="register-role" name="role" required>
+  <option value="" disabled selected>Select role</option>
+  <option value="customer">Customer</option>
+  <option value="admin">Admin</option>
+</select>
+
           <label for="register-name">Full name</label>
           <input id="register-name" type="text" placeholder="Your name" required>
 
@@ -55,50 +63,60 @@
   </main>
 
   <script>
-    const registerForm = document.querySelector(".register-form");
-    const formMessage = document.querySelector(".form-message");
-    const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+  const registerForm = document.querySelector(".register-form");
+  const formMessage = document.querySelector(".form-message");
+  const roleSelect = document.querySelector("#register-role");
+  const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
 
-    registerForm.addEventListener("submit", (event) => {
-      event.preventDefault();
+  registerForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-      const name = document.querySelector("#register-name").value.trim();
-      const email = document.querySelector("#register-email").value.trim();
-      const password = document.querySelector("#register-password").value.trim();
-      const confirmPassword = document.querySelector("#confirm-password").value.trim();
+    const role = roleSelect.value;
+    const name = document.querySelector("#register-name").value.trim();
+    const email = document.querySelector("#register-email").value.trim();
+    const password = document.querySelector("#register-password").value.trim();
+    const confirmPassword = document.querySelector("#confirm-password").value.trim();
 
-      if (name.length < 2) {
-        formMessage.textContent = "Please enter your full name.";
-        formMessage.className = "form-message error";
-        return;
-      }
+    if (!role) {
+      formMessage.textContent = "Please select Admin or Customer.";
+      formMessage.className = "form-message error";
+      return;
+    }
 
-      if (!isValidEmail(email)) {
-        formMessage.textContent = "Please enter a valid email address.";
-        formMessage.className = "form-message error";
-        return;
-      }
+    if (name.length < 2) {
+      formMessage.textContent = "Please enter your full name.";
+      formMessage.className = "form-message error";
+      return;
+    }
 
-      if (password.length < 6) {
-        formMessage.textContent = "Password must be at least 6 characters.";
-        formMessage.className = "form-message error";
-        return;
-      }
+    if (!isValidEmail(email)) {
+      formMessage.textContent = "Please enter a valid email address.";
+      formMessage.className = "form-message error";
+      return;
+    }
 
-      if (password !== confirmPassword) {
-        formMessage.textContent = "Passwords do not match.";
-        formMessage.className = "form-message error";
-        return;
-      }
+    if (password.length < 6) {
+      formMessage.textContent = "Password must be at least 6 characters.";
+      formMessage.className = "form-message error";
+      return;
+    }
 
-      formMessage.textContent = "Registration successful. Redirecting to login...";
-      formMessage.className = "form-message success";
-      registerForm.reset();
+    if (password !== confirmPassword) {
+      formMessage.textContent = "Passwords do not match.";
+      formMessage.className = "form-message error";
+      return;
+    }
 
-      setTimeout(() => {
-        window.location.href = "Login.html";
-      }, 1200);
-    });
-  </script>
+    // TODO: POST { name, email, password, role } to your API
+
+    formMessage.textContent = "Registration successful. Redirecting to login...";
+    formMessage.className = "form-message success";
+    registerForm.reset();
+
+    setTimeout(() => {
+      window.location.href = `Login.html?role=${encodeURIComponent(role)}`;
+    }, 1200);
+  });
+</script>
 </body>
 </html>

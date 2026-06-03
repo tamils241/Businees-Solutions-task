@@ -26,8 +26,17 @@
           <h1>Login to your account</h1>
           <p>Access your dashboard, services, and business growth tools.</p>
         </div>
-
+  
         <form class="auth-form login-form" novalidate>
+
+          <label for="login-role">Sign in as</label>
+
+          <select id="login-role" name="role" required>
+          <option value="" disabled selected>Select role</option>
+          <option value="customer">Customer</option>
+          <option value="admin">Admin</option>
+          </select>
+
           <label for="login-email">Email address</label>
           <input id="login-email" type="email" placeholder="you@example.com" required>
 
@@ -64,55 +73,84 @@
     </section>
   </main>
 
-  <script>
-    const loginForm = document.querySelector(".login-form");
-    const forgotForm = document.querySelector(".forgot-form");
-    const forgotToggle = document.querySelector(".forgot-toggle");
-    const backLogin = document.querySelector(".back-login");
-    const formMessage = document.querySelector(".form-message");
-    const forgotMessage = document.querySelector(".forgot-message");
-    const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+ <script>
+  const loginForm = document.querySelector(".login-form");
+  const forgotForm = document.querySelector(".forgot-form");
+  const forgotToggle = document.querySelector(".forgot-toggle");
+  const backLogin = document.querySelector(".back-login");
+  const formMessage = document.querySelector(".form-message");
+  const forgotMessage = document.querySelector(".forgot-message");
+  const roleSelect = document.querySelector("#login-role");
+  const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
 
-    loginForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const email = document.querySelector("#login-email").value.trim();
-      const password = document.querySelector("#login-password").value.trim();
+  const dashboards = {
+  admin: "admin_dashboard.html",      // or admin_deshboard.html if that's your file name
+  customer: "customer_dashboard.html",
+};
 
-      if (!isValidEmail(email) || password.length < 6) {
-        formMessage.textContent = "Please enter a valid email and password.";
-        formMessage.className = "form-message error";
-        return;
-      }
+  // Pre-select role from Register: Login.html?role=customer
+  const params = new URLSearchParams(window.location.search);
+  const roleFromUrl = params.get("role");
+  if (roleFromUrl && roleSelect && dashboards[roleFromUrl]) {
+    roleSelect.value = roleFromUrl;
+  }
 
-      formMessage.textContent = "Login successful.";
-      formMessage.className = "form-message success";
-    });
+  loginForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-    forgotToggle.addEventListener("click", () => {
-      loginForm.hidden = true;
-      forgotForm.hidden = false;
-    });
+    const role = roleSelect.value;
+    const email = document.querySelector("#login-email").value.trim();
+    const password = document.querySelector("#login-password").value.trim();
 
-    backLogin.addEventListener("click", () => {
-      forgotForm.hidden = true;
-      loginForm.hidden = false;
-      forgotMessage.textContent = "";
-    });
+    if (!role) {
+      formMessage.textContent = "Please select Admin or Customer.";
+      formMessage.className = "form-message error";
+      return;
+    }
 
-    forgotForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const email = document.querySelector("#forgot-email").value.trim();
+    if (!isValidEmail(email) || password.length < 6) {
+      formMessage.textContent = "Please enter a valid email and password.";
+      formMessage.className = "form-message error";
+      return;
+    }
 
-      if (!isValidEmail(email)) {
-        forgotMessage.textContent = "Please enter your registered email address.";
-        forgotMessage.className = "forgot-message error";
-        return;
-      }
+    // TODO: call your API; server returns real role
+    formMessage.textContent = "Login successful. Redirecting...";
+    formMessage.className = "form-message success";
 
-      forgotMessage.textContent = "Password reset link sent successfully.";
-      forgotMessage.className = "forgot-message success";
-      forgotForm.reset();
-    });
-  </script>
+    setTimeout(() => {
+      window.location.href = dashboards[role];
+    }, 800);
+  });
+
+  forgotToggle.addEventListener("click", () => {
+    loginForm.hidden = true;
+    forgotForm.hidden = false;
+    formMessage.textContent = "";
+    formMessage.className = "form-message";
+  });
+
+  backLogin.addEventListener("click", () => {
+    forgotForm.hidden = true;
+    loginForm.hidden = false;
+    forgotMessage.textContent = "";
+    forgotMessage.className = "forgot-message";
+  });
+
+  forgotForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const email = document.querySelector("#forgot-email").value.trim();
+
+    if (!isValidEmail(email)) {
+      forgotMessage.textContent = "Please enter your registered email address.";
+      forgotMessage.className = "forgot-message error";
+      return;
+    }
+
+    forgotMessage.textContent = "Password reset link sent successfully.";
+    forgotMessage.className = "forgot-message success";
+    forgotForm.reset();
+  });
+</script>
 </body>
 </html>

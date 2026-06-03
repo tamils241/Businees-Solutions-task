@@ -1,0 +1,138 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      color: white;
+      background:
+        linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.72)),
+        url("../construction-home-page/asset/construction.webp") center/cover no-repeat;
+    }
+
+    .navbar {
+      width: calc(100% - 80px);
+      margin: 20px auto 0;
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(35,35,35,0.76);
+      border-radius: 16px;
+    }
+
+    .logo {
+      width: 130px;
+      display: block;
+      padding: 6px;
+      background: rgba(35,35,35,0.76);
+      border-radius: 8px;
+      filter: hue-rotate(200deg) saturate(1.4);
+    }
+
+    .logo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .error-section {
+      min-height: calc(100vh - 110px);
+      padding: 40px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .error-content {
+      max-width: 760px;
+    }
+
+    .error-code {
+      display: block;
+      margin-bottom: 12px;
+      color: rgb(0, 255, 153);
+      font-size: 120px;
+      line-height: 1;
+      font-weight: 800;
+    }
+
+    .error-content h1 {
+      margin-bottom: 18px;
+      font-size: 46px;
+      line-height: 1.15;
+    }
+
+    .error-content p {
+      max-width: 620px;
+      margin: 0 auto 30px;
+      color: #e5e5e5;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 30px;
+      color: white;
+      background: rgb(51, 45, 141);
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .home-btn:hover {
+      background: #4082b5;
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        width: calc(100% - 30px);
+        padding: 16px 20px;
+      }
+
+      .logo {
+        width: 115px;
+      }
+
+      .error-code {
+        font-size: 88px;
+      }
+
+      .error-content h1 {
+        font-size: 36px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar {
+        width: calc(100% - 20px);
+        padding: 14px 16px;
+      }
+
+      .logo {
+        width: 82px;
+      }
+
+      .error-code {
+        font-size: 72px;
+      }
+
+      .error-content h1 {
+        font-size: 30px;
+      }
+
+      .error-content p {
+        font-size: 16px;
+      }
+    }
+  
