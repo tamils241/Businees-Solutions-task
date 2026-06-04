@@ -169,7 +169,34 @@ body {
     padding: 24px;
   }
 }
+/*animation */
+.animate-1,
+.animate-2,
+.animate-3 {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  animation: heroReveal 1s ease forwards;
+}
 
+.animate-2 {
+  animation-delay: 0.7s;
+}
+
+.animate-3 {
+  animation-delay: 0.9s;
+}
+
+@keyframes heroReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
 /*footer styles*
 .site-footer {
   padding: 72px 8% 28px;

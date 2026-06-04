@@ -334,3 +334,61 @@ body {
   font: inherit;
   background: #fff;
 }
+
+/* animation text */
+.visual-label,
+h2,
+.hero-text {
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+}
+
+h2 {
+  animation-delay: 0.3s;
+}
+
+.hero-text {
+  animation-delay: 0.6s;
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* auth-card text */
+.auth-label {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+h1 {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.auth-text {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

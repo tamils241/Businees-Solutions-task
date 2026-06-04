@@ -710,3 +710,31 @@ a {
     gap: 10px;
   }
 }
+/* } text animation */
+.eyebrow,
+.hero-title,
+.hero-description {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: heroReveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-title {
+  animation-delay: 0.7s;
+}
+
+.hero-description {
+  animation-delay: 0.9s;
+}
+
+@keyframes heroReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
