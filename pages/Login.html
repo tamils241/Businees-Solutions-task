@@ -36,14 +36,14 @@
           </select>
 
           <label for="login-email">Email address</label>
-          <input id="login-email" type="email" placeholder="you@example.com" required>
+          <input id="login-email" type="email" placeholder="you@example.com" required autocomplete="username">
 
           <label for="login-password">Password</label>
-          <input id="login-password" type="password" placeholder="Enter password" required>
+          <input id="login-password" type="password" placeholder="Minimum 8 characters" required autocomplete="current-password">
 
           <div class="form-row">
             <label class="remember">
-              <input type="checkbox">
+              <input type="checkbox" id="remember-me" name="remember">
               <span>Remember me</span>
             </label>
             <button class="link-button forgot-toggle" type="button">Forgot password?</button>
@@ -79,8 +79,11 @@
     const formMessage = document.querySelector(".form-message");
     const forgotMessage = document.querySelector(".forgot-message");
     const roleSelect = document.querySelector("#login-role");
+    const rememberMe = document.querySelector("#remember-me");
+    const passwordInput = document.querySelector("#login-password");
     const isValidEmail = (e) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e);
 
+    // Must match your real file names in pages/
     const dashboards = {
       admin: "admin_Dashboard.html",
       customer: "customer_deshboard.html",
@@ -104,7 +107,7 @@
 
       const role = roleSelect.value;
       const email = document.querySelector("#login-email").value.trim();
-      const password = document.querySelector("#login-password").value.trim();
+      const password = passwordInput.value.trim();
 
       if (!role) {
         formMessage.textContent = "Please select Admin or Customer.";
@@ -112,9 +115,24 @@
         return;
       }
 
-      if (!isValidEmail(email) || password.length < 6) {
-        formMessage.textContent = "Please enter a valid email and password.";
+      if (!rememberMe.checked) {
+        formMessage.textContent = "Please select the Remember me checkbox to continue.";
         formMessage.className = "form-message error";
+        rememberMe.focus();
+        alert("Please select the Remember me button.");
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        formMessage.textContent = "Please enter a valid email address.";
+        formMessage.className = "form-message error";
+        return;
+      }
+
+      if (password.length < 8) {
+        formMessage.textContent = "Password must be at least 8 characters.";
+        formMessage.className = "form-message error";
+        passwordInput.focus();
         return;
       }
 
@@ -122,7 +140,8 @@
         localStorage.getItem("profile:" + email.toLowerCase()) || "{}"
       );
       const rawName = profile.name || email.split("@")[0];
-      const displayName = rawName.charAt(0).toUpperCase() + rawName.slice(1);
+      const displayName =
+        rawName.charAt(0).toUpperCase() + rawName.slice(1);
 
       saveAuth(role, email, displayName);
 
@@ -137,11 +156,15 @@
     forgotToggle.addEventListener("click", function () {
       loginForm.hidden = true;
       forgotForm.hidden = false;
+      formMessage.textContent = "";
+      formMessage.className = "form-message";
     });
 
     backLogin.addEventListener("click", function () {
       forgotForm.hidden = true;
       loginForm.hidden = false;
+      forgotMessage.textContent = "";
+      forgotMessage.className = "forgot-message";
     });
 
     forgotForm.addEventListener("submit", function (event) {

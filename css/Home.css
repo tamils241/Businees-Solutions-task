@@ -155,8 +155,8 @@ a {
   inset: 0;
   content: "";
   background:
-    linear-gradient(90deg, rgba(15, 23, 42, 0.92), rgba(121, 241, 195, 0.66), rgba(15, 23, 42, 0.32)),
-    linear-gradient(180deg, rgba(15, 23, 42, 0.2), rgba(105, 130, 189, 0.62));
+    linear-gradient(90deg, rgba(15, 23, 42, 0.92), rgba(118, 238, 144, 0.66), rgba(15, 23, 42, 0.32)),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.2), rgba(243, 246, 245, 0.62));
 }
 
 .hero-content {

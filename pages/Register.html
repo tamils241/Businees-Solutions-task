@@ -36,16 +36,39 @@
           </select>
 
           <label for="register-name">Full name</label>
-          <input id="register-name" type="text" placeholder="Your name" required>
+          <input
+            id="register-name"
+            type="text"
+            name="name"
+            placeholder="Letters only, max 16"
+            minlength="2"
+            maxlength="16"
+            autocomplete="name"
+            required
+          >
 
           <label for="register-email">Email address</label>
           <input id="register-email" type="email" placeholder="you@example.com" required>
 
           <label for="register-password">Password</label>
-          <input id="register-password" type="password" placeholder="Minimum 6 characters" required>
+          <input
+            id="register-password"
+            type="password"
+            placeholder="Minimum 8 characters"
+            minlength="8"
+            autocomplete="new-password"
+            required
+          >
 
           <label for="confirm-password">Confirm password</label>
-          <input id="confirm-password" type="password" placeholder="Re-enter password" required>
+          <input
+            id="confirm-password"
+            type="password"
+            placeholder="Re-enter password (min 8)"
+            minlength="8"
+            autocomplete="new-password"
+            required
+          >
 
           <p class="form-message" aria-live="polite"></p>
           <button class="auth-submit" type="submit">Register</button>
@@ -65,15 +88,22 @@
     const registerForm = document.querySelector(".register-form");
     const formMessage = document.querySelector(".form-message");
     const roleSelect = document.querySelector("#register-role");
+    const nameInput = document.querySelector("#register-name");
+    const passwordInput = document.querySelector("#register-password");
     const isValidEmail = (e) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e);
+    const isValidName = (name) => /^[A-Za-z ]{2,16}$/.test(name);
+
+    nameInput.addEventListener("input", function () {
+      this.value = this.value.replace(/[^A-Za-z ]/g, "").slice(0, 16);
+    });
 
     registerForm.addEventListener("submit", function (event) {
       event.preventDefault();
 
       const role = roleSelect.value;
-      const name = document.querySelector("#register-name").value.trim();
+      const name = nameInput.value.trim();
       const email = document.querySelector("#register-email").value.trim();
-      const password = document.querySelector("#register-password").value.trim();
+      const password = passwordInput.value.trim();
       const confirmPassword = document.querySelector("#confirm-password").value.trim();
 
       if (!role) {
@@ -81,21 +111,48 @@
         formMessage.className = "form-message error";
         return;
       }
+
       if (name.length < 2) {
-        formMessage.textContent = "Please enter your full name.";
+        formMessage.textContent = "Name must be at least 2 characters.";
         formMessage.className = "form-message error";
+        nameInput.focus();
         return;
       }
+
+      if (name.length > 16) {
+        formMessage.textContent = "Name must be 16 characters or less.";
+        formMessage.className = "form-message error";
+        nameInput.focus();
+        return;
+      }
+
+      if (!isValidName(name)) {
+        formMessage.textContent = "Name can contain only letters (A–Z) and spaces.";
+        formMessage.className = "form-message error";
+        nameInput.focus();
+        return;
+      }
+
+      if (!/^[A-Za-z]/.test(name) || !/[A-Za-z]$/.test(name)) {
+        formMessage.textContent = "Name must start and end with a letter.";
+        formMessage.className = "form-message error";
+        nameInput.focus();
+        return;
+      }
+
       if (!isValidEmail(email)) {
         formMessage.textContent = "Please enter a valid email address.";
         formMessage.className = "form-message error";
         return;
       }
-      if (password.length < 6) {
-        formMessage.textContent = "Password must be at least 6 characters.";
+
+      if (password.length < 8) {
+        formMessage.textContent = "Password must be at least 8 characters.";
         formMessage.className = "form-message error";
+        passwordInput.focus();
         return;
       }
+
       if (password !== confirmPassword) {
         formMessage.textContent = "Passwords do not match.";
         formMessage.className = "form-message error";

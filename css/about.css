@@ -1,7 +1,7 @@
 @import url("Home.css");
 
 body {
-  --accent: #2c72bc;
+  --accent: #f74542;
 }
 
 .page-about .video-hero::after {

@@ -1,7 +1,7 @@
 @import url("Home.css");
 
 body {
-  --accent: #0d9423;
+  --accent: #e55f53;
   
 }
 
@@ -19,8 +19,8 @@ body {
 
 .page-portfolio .video-hero::after {
   background:
-    linear-gradient(90deg, rgba(15, 23, 42, 0.94), rgba(13, 148, 136, 0.62), rgba(15, 23, 42, 0.36)),
-    linear-gradient(180deg, rgba(15, 23, 42, 0.16), rgba(15, 23, 42, 0.72));
+    linear-gradient(90deg, rgba(15, 23, 42, 0.94), rgba(111, 239, 135, 0.62), rgba(15, 23, 42, 0.36)),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.16), rgba(142, 168, 228, 0.72));
 }
 
 .portfolio-intro {
