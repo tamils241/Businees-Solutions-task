@@ -44,7 +44,7 @@ body {
   color: #ffffff;
   background:
     linear-gradient(180deg, rgba(15, 23, 42, 0.16), rgba(15, 23, 42, 0.72)),
-    url("../images/Data Analytics.jpg") center / cover;
+    url("../images/Data Analytics.webp") center / cover;
 }
 
 .auth-brand {
