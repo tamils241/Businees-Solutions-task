@@ -1120,8 +1120,10 @@ a {
 }
 
 .footer-brand .brand-logo {
-  width: 130px;
-  height: 76px;
+  width: auto;
+  max-width: 150px;
+  height: 44px;
+  object-fit: contain;
 }
 
 .footer-brand span {
@@ -1138,6 +1140,9 @@ a {
   margin: 0 0 18px;
   color: #ffffff;
   font-size: 18px;
+  height: 44px;
+  display: flex;
+  align-items: center;
 }
 
 .footer-list {
@@ -1600,8 +1605,9 @@ a {
   }
 
   .footer-brand .brand-logo {
-    width: 118px;
-    height: 68px;
+    width: auto;
+    height: auto;
+    max-height: 44px;
   }
 
   .site-footer p {
@@ -1623,6 +1629,10 @@ a {
 
   .btn {
     width: 100%;
+  }
+
+  .footer-column h3 {
+    height: auto;
   }
 }
 

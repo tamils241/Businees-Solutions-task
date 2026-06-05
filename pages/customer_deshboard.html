@@ -158,10 +158,10 @@
           sharper marketing, and steady growth.
         </p>
         <div class="social-links">
-          <a href="https://www.facebook.com/login.php/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.linkedin.com/login" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://www.instagram.com/accounts/login/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://twitter.com/login" aria-label="X Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="NotFound.html" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="NotFound.html" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="NotFound.html" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="NotFound.html" aria-label="X Twitter"><i class="fab fa-x-twitter"></i></a>
         </div>
       </div>
 
@@ -233,6 +233,16 @@
     document.querySelector(".customer-support-form")?.addEventListener("submit", function (e) {
       e.preventDefault();
       var msg = e.target.querySelector(".form-message");
+      var subject = document.getElementById("support-subject").value.trim();
+      var issue = document.getElementById("support-issue").value.trim();
+
+      if (!subject || !issue) {
+        alert("Please fill out all fields before submitting.");
+        msg.textContent = "Please fill all fields.";
+        msg.className = "form-message error";
+        return;
+      }
+
       msg.textContent = "Request submitted successfully.";
       msg.className = "form-message success";
       e.target.reset();

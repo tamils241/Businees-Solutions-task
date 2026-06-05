@@ -222,8 +222,10 @@ body {
 }
 
 .footer-brand .brand-logo {
-  width: 130px;
-  height: 76px;
+  width: auto;
+  max-width: 150px;
+  height: 44px;
+  object-fit: contain;
 }
 
 .footer-brand span {
@@ -240,6 +242,9 @@ body {
   margin: 0 0 18px;
   color: #ffffff;
   font-size: 18px;
+  height: 44px;
+  display: flex;
+  align-items: center;
 }
 
 .footer-list {

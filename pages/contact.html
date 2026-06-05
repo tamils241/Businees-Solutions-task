@@ -48,11 +48,11 @@
         <p><i class="fas fa-phone"></i> <a href="tel:+911234567890">+91 1234567890</a></p>
         <p><i class="fas fa-envelope"></i> <a href="mailto:info@stacklybusinesssolutions.com">info@stacklybusinesssolutions.com</a></p>
       </div>
-      <form class="contact-form">
-        <input type="text" placeholder="Your name" aria-label="Your name">
-        <input type="email" placeholder="Email address" aria-label="Email address">
-        <input type="text" placeholder="Service needed" aria-label="Service needed">
-        <textarea placeholder="Project details" aria-label="Project details"></textarea>
+      <form class="contact-form" novalidate>
+        <input type="text" placeholder="Your name" aria-label="Your name" maxlength="16" pattern="[A-Za-z]{1,16}" required>
+        <input type="email" placeholder="Email address" aria-label="Email address" required>
+        <input type="text" placeholder="Service needed" aria-label="Service needed" required>
+        <textarea placeholder="Project details" aria-label="Project details" required></textarea>
         <button class="btn btn-primary" type="submit">Send Message</button>
       </form>
     </section>
@@ -61,7 +61,7 @@
   <footer class="site-footer">
       <div class="footer-content">
         <div class="footer-column footer-about">
-          <a class="brand footer-brand" href="#">
+          <a class="brand footer-brand" href="../index.html">
             <img class="brand-logo" src="../images/logo.webp" alt="Business Solutions logo">
           </a>
           <p>
@@ -69,10 +69,10 @@
             sharper marketing, and steady growth.
           </p>
           <div class="social-links">
-            <a href="https://www.facebook.com/login.php/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.linkedin.com/login" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.instagram.com/accounts/login/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/login" aria-label="X Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="NotFound.html" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="NotFound.html" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="NotFound.html" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="NotFound.html" aria-label="X Twitter"><i class="fab fa-x-twitter"></i></a>
           </div>
         </div>
 
@@ -127,15 +127,57 @@
         </div>
       </div>
     </footer>  
-</body>
-
 <!-- email validation script -->
 <script>
+  const contactForm = document.querySelector(".contact-form");
+  const contactNameInput = contactForm ? contactForm.querySelector("input[type='text']") : null;
+  const contactEmailInput = contactForm ? contactForm.querySelector("input[type='email']") : null;
+  const contactServiceInput = contactForm ? contactForm.querySelectorAll("input[type='text']")[1] : null;
+  const contactDetailsInput = contactForm ? contactForm.querySelector("textarea") : null;
+
   const newsletterForm = document.querySelector(".newsletter-form");
   const newsletterInput = newsletterForm ? newsletterForm.querySelector("input[type='email']") : null;
-  const newsletterMessage = document.querySelector(" .newsletter-message");
-if (newsletterForm && newsletterInput && newsletterMessage) {
+  const newsletterMessage = document.querySelector(".newsletter-message");
+
   const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+  const isValidName = (name) => /^[A-Za-z]{1,16}$/.test(name);
+
+  if (contactForm && contactNameInput && contactEmailInput && contactServiceInput && contactDetailsInput) {
+    contactNameInput.addEventListener("input", () => {
+      contactNameInput.value = contactNameInput.value.replace(/[^A-Za-z]/g, "").slice(0, 16);
+    });
+
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = contactNameInput.value.trim();
+      const email = contactEmailInput.value.trim();
+      const service = contactServiceInput.value.trim();
+      const details = contactDetailsInput.value.trim();
+
+      if (!name || !email || !service || !details) {
+        alert("Please fill all fields.");
+        return;
+      }
+
+      if (!isValidName(name)) {
+        alert("Name should contain only alphabets and maximum 16 characters.");
+        contactNameInput.focus();
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        alert("Please enter valid email id.");
+        contactEmailInput.focus();
+        return;
+      }
+
+      alert("Your message has been submitted successfully.");
+      contactForm.reset();
+    });
+  }
+
+  if (newsletterForm && newsletterInput && newsletterMessage) {
 
   const showNewsletterMessage = (message, type) => {
     newsletterMessage.textContent = message;
@@ -148,6 +190,7 @@ if (newsletterForm && newsletterInput && newsletterMessage) {
     const email = newsletterInput.value.trim();
 
     if (!isValidEmail(email)) {
+      alert("Please enter valid email id.");
       showNewsletterMessage("Please enter a valid email address.", "error");
       newsletterInput.focus();
       return;
@@ -156,6 +199,8 @@ if (newsletterForm && newsletterInput && newsletterMessage) {
     showNewsletterMessage("Your email has been submitted successfully.", "success");
     newsletterForm.reset();
   });
-}
+  }
 </script>
+</body>
 </html>
+
